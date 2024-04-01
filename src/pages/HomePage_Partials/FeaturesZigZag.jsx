@@ -1,9 +1,9 @@
 import React from "react";
-// import { FaCheck } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
 function FeaturesZigzag({ images }) {
   return (
-    <section>
+    <section className="">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <br />
         <div className="py-12 md:py-20 border-t border-gray-800">
@@ -11,12 +11,17 @@ function FeaturesZigzag({ images }) {
           <br />
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">One product, unlimited solutions</h1>
-            <p className="text-xl text-gray-500">
-              Our platform provides a range of features, including event
-              creation and the ability to take registrations, all while
-              accommodating multiple admins.
-            </p>
+            <div class="w-full h-auto flex flex-wrap flex-col items-center">
+              <p class="text-indigo-500 font-bold text-3xl md:text-4xl text-center">
+                One product, unlimited solutions
+              </p>
+              <div class="w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12"></div>
+              <p className="text-xl text-gray-500">
+                Our platform provides a range of features, including event
+                creation and the ability to take registrations, all while
+                accommodating multiple admins.
+              </p>
+            </div>
           </div>
 
           {/* Items */}
@@ -77,13 +82,13 @@ function FeaturesZigzag({ images }) {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl"
                 data-aos="fade-up"
               >
-                <img
+                {/* <img
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={images[1].src}
                   width="540"
                   height="405"
                   alt={images[1].title}
-                />
+                /> */}
               </div>
               {/* Content */}
               <div
@@ -127,13 +132,13 @@ function FeaturesZigzag({ images }) {
                 className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1"
                 data-aos="fade-up"
               >
-                <img
+                {/* <img
                   className="max-w-full mx-auto md:max-w-none h-auto"
                   src={images[2].src}
                   width="540"
                   height="405"
                   alt={images[2].title}
-                />
+                /> */}
               </div>
               {/* Content */}
               <div
