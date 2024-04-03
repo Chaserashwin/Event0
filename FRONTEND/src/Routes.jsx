@@ -15,14 +15,14 @@ const ProjectRoutes = () => {
       path: "*",
       element: <NotFound />,
     },
-    {
-      path: "login",
-      element: <Login />,
-    },
-    {
-      path: "Signup",
-      element: <Signup />,
-    },
+    // {
+    //   path: "login",
+    //   element: <Login />,
+    // },
+    // {
+    //   path: "Signup",
+    //   element: <Signup />,
+    // },
   ]);
   return element;
 };

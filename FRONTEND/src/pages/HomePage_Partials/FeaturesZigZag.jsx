@@ -11,11 +11,11 @@ function FeaturesZigzag({ images }) {
           <br />
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <div class="w-full h-auto flex flex-wrap flex-col items-center">
-              <p class="text-indigo-500 font-bold text-3xl md:text-4xl text-center">
+            <div className="w-full h-auto flex flex-wrap flex-col items-center">
+              <p className="text-indigo-500 font-bold text-3xl md:text-4xl text-center">
                 One product, unlimited solutions
               </p>
-              <div class="w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12"></div>
+              <div className="w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12"></div>
               <p className="text-xl text-gray-500">
                 Our platform provides a range of features, including event
                 creation and the ability to take registrations, all while
