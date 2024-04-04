@@ -3,7 +3,7 @@ import ShowModal from "./ShowModal";
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
-  
+
   const closeModal = () => setShowModal(false);
 
   const handleCloseButton = <button onClick={closeModal}>Accept it</button>;

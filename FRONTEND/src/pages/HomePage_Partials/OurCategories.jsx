@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function OurCategories({ images: categories }) {
   return (
@@ -9,7 +10,7 @@ function OurCategories({ images: categories }) {
             key={categorie?.id}
             className="h-[100px] w-[100px] flex flex-col items-center text-center m-1"
           >
-            <a href="">
+            <NavLink className="nav-link" to={categorie?.title}>
               <img
                 className="bg-orange-300 hover:bg-orange-100 flex rounded-full p-1 border-dotted border-2 border-black"
                 src={categorie?.src}
@@ -19,7 +20,7 @@ function OurCategories({ images: categories }) {
               <p className="text-xl font-semibold dark:text-white">
                 {categorie?.title}
               </p>
-            </a>
+            </NavLink>
           </div>
         ))}
       </div>

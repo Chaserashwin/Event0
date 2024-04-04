@@ -2,8 +2,10 @@ import React from "react";
 import { useRoutes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Music from "./pages/OurCategories/Music";
+import Business from "./pages/OurCategories/Business";
+import College from "./pages/OurCategories/College";
+import Navbar from "./pages/Navbar";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -15,14 +17,18 @@ const ProjectRoutes = () => {
       path: "*",
       element: <NotFound />,
     },
-    // {
-    //   path: "login",
-    //   element: <Login />,
-    // },
-    // {
-    //   path: "Signup",
-    //   element: <Signup />,
-    // },
+    {
+      path: "music",
+      element: <Music />,
+    },
+    {
+      path: "business",
+      element: <Business />,
+    },
+    {
+      path: "college",
+      element: <College />,
+    },
   ]);
   return element;
 };
