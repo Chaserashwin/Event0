@@ -7,6 +7,14 @@
   @apply transition-colors duration-200;
 }
 
+.modal-wrapper {
+  @apply absolute inset-0 flex flex-col items-center justify-center bg-gray-400 opacity-50;
+}
+
+/* .modal-container {
+  @apply absolute pl-12 pr-10 pt-9 pb-8 sm:pl-10 sm:pr-10 hidden sm:block place-content-center max-h-screen overflow-y-auto z-50 bg-white rounded-lg shadow-lg;
+} */
+
 * {
   font-family: "Laila", serif;
   font-weight: 500;
@@ -25,23 +33,35 @@
   position: relative;
 }
 
-.modal-wrapper {
+/* .modal-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(189, 189, 189, 0.542);
-}
+} */
 
 .modal-container {
+  overflow-y: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 30rem;
-  height: 50rem;
-  padding: 2rem 3rem;
+  min-width: 30rem;
+  height: 40rem;
+  padding: 3rem 2rem;
   border-radius: 0.5rem;
   background-color: white;
+  /* margin: 1rem; */
+}
+
+.loginbutton {
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  fill: #fff;
+  background-color: #e32359;
+  border-color: #e32359;
+  padding: 8px 12px;
 }

@@ -14,6 +14,15 @@ const ShowModal = ({ closeModal, children, handleCloseButton }) => {
     <>
       <div className="modal-wrapper" onClick={closeModal}></div>
       <div className="modal-container">
+        <button
+          className="absolute right-3 top-3 rounded-full fill-current text-lg "
+          onClick={closeModal}
+        >
+          cross
+          <div>
+            <img src="" alt="" />
+          </div>
+        </button>
         {children}
         {handleCloseButton}
       </div>
