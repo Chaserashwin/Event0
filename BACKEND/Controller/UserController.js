@@ -85,14 +85,14 @@ module.exports.loginUser=(req,res,next)=>{
         passport.authenticate("local",(err,user,info)=>{
             if(err) return res.status(404).json(err);
             if(user) return res.status(200).json({
-                "token":jwt.sign({_id:user.id,username:user.name},"tokenSecret!",{expiresIn:"1w"})
+                "token":jwt.sign({_id:user.id,username:user.name},"tokenSecret!",{expiresIn:"300s"})
             });
             if(info)
-            return res.status(400).json({err:"Either email or password is wrong"})
+            return res.status(400).json({info})
         })(req,res,next);
 };
 module.exports.profile=(req,res)=>{
-    res.status(200).json({msg:"Hii THere"});
+    res.status(200).json({msg:"Hii There"});
 }
 
 const GOOGLE_CLIENT_ID=process.env.GOOGLE_CLIENT_ID;
