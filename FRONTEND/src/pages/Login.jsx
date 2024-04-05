@@ -106,7 +106,7 @@ const Login = () => {
               {/* for google Authorization */}
               <div className="w-full flex flex-col items-center space-y-4 p-3">
                 <a
-                  href="/signup"
+                  href="http://localhost:2000/auth/google/callback"
                   className="w-full flex flex-row h-13 cursor-pointer items-center justify-between rounded-lg border border-gray6 font-normal hover:no-underline px-2"
                 >
                   <img src={google} width={50} height={50} alt="" />
