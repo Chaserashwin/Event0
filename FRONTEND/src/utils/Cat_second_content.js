@@ -1,4 +1,4 @@
-const cat = [
+const Cat = [
   {
     catId: 0,
     title: "Music",
@@ -111,3 +111,5 @@ const cat = [
     ],
   },
 ];
+
+export default Cat;

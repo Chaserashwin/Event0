@@ -30,7 +30,7 @@ const Images = [
   },
   {
     id: 5,
-    src: "/images/dev2.jpg",
+    src: "/images/dev2.png",
     title: "Samily Saini",
     role: "FullStack Dev",
     linkedinUrl: "https://www.linkedin.com/in/devanshuyadav16/",

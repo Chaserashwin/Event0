@@ -15,17 +15,17 @@ const Navbar = () => {
   const closeloginModal = () => setShowloginModal(false);
   const closesignupModal = () => setShowsignupModal(false);
 
-  const handleCloseloginButton = (
-    <button onClick={closeloginModal}>Accept it</button>
-  );
-  const handleClosesignupButton = (
-    <button onClick={closesignupModal}>Accept it</button>
-  );
+  // const handleCloseloginButton = (
+  //   <button onClick={closeloginModal}>Accept it</button>
+  // );
+  // const handleClosesignupButton = (
+  //   <button onClick={closesignupModal}>Accept it</button>
+  // );
 
   const loginModal = (
     <ShowModal
       closeModal={closeloginModal}
-      handleCloseButton={handleCloseloginButton}
+      // handleCloseButton={handleCloseloginButton}
     >
       <Login />
     </ShowModal>
@@ -34,7 +34,7 @@ const Navbar = () => {
   const signupModal = (
     <ShowModal
       closeModal={closesignupModal}
-      handleCloseButton={handleClosesignupButton}
+      // handleCloseButton={handleClosesignupButton}
     >
       <Signup />
     </ShowModal>
