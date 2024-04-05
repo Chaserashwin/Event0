@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-auto flex justify-between items-center py-2 px-3 md:px-8 fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 dark:text-white border-b dark:border-black">
+      <nav className="w-full h-[117px] flex justify-between items-center py-2 px-3 md:px-8 fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 dark:text-white border-b dark:border-black">
         {/* for logo */}
         {/* <div className="logo font-bold text-3xl cursor-pointer md:ml-3 md:block hidden">
           <span className="text-green-500 font-bold">Event</span>

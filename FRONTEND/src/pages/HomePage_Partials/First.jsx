@@ -6,14 +6,14 @@ function First() {
     <>
       <div className="w-full h-auto flex flex-col items-center sm:mt-[140px] mt-[120px]">
         <div
-          className="flex flex-col items-center md:flex-row lg:mx-16 sm:mx-20 md:mx-10  border-4 dark:border-gray-400 border-black rounded md:p-4 p-3 bg-gradient-to-r 
+          className="flex flex-col items-center md:flex-row lg:mx-16 sm:mx-20 md:mx-10 mx-5 border-4 dark:border-gray-400 border-black rounded md:p-4 p-3 bg-gradient-to-r 
          from-pink-500 to-yellow-500"
         >
-          <div className="mb-6 flex w-full flex-col space-y-6 md:mb-0 md:mr-6 ml-6 lg:w-7/12 md:block md:p-4 p-2">
+          <div className=" flex w-full flex-col space-y-6 mb-0 md:mr-6 md:ml-6 lg:w-7/12 md:block md:p-4 p-2 items-center">
             <h1 className="text-3xl md:text-4xl font-bold dark:text-white">
               The people platform—Where interests become friendships
             </h1>
-            <p className="text-justify pr-10 dark:text-white">
+            <p className="md:text-justify text-center md:pr-10 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
               facere, pariatur deserunt totam neque aspernatur illum fugiat
               alias quidem doloribus maiores magnam aliquam recusandae
@@ -21,7 +21,7 @@ function First() {
             </p>
             <div className="mt-0">
               <NavLink
-                className="hover:bg-gray-500 hover:text-black bg-black text-teal-50  text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
+                className="hover:bg-gray-500 hover:text-black bg-black text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
                 to="Signup"
               >
                 Join Event0

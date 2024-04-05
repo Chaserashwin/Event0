@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="bg-black text-white w-full h-auto items-center p-6 md:px-14">
-      Footer starts here
-      <div className="flex flex-wrap border-t-2 border-gray-300 py-2">
+    <div className="dark:bg-black dark:text-white w-full h-auto items-center p-6 pt-2 pb-2 md:px-14 border-t-2 border-gray-200 ">
+      {/* Footer starts here */}
+      <div className="flex flex-wrap py-2">
         <div className="md:w-[43%] w-[100%] pl-0 p-3 md:pr-[120px]">
           Address
           <p className="justify text-pretty">

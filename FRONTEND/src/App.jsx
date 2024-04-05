@@ -1,15 +1,52 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Routes from "./Routes";
 import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./pages/Navbar";
 import Footer from "./pages/HomePage_Partials/Footer";
+import Header from "./pages/Header";
 
 function App() {
+  // const [darkMode, setDarkMode] = useState(false);
+  // const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(null);
+
+  // for browser windows mode default
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  // };
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div className="relative">
+    // <div className={`"relative" ${darkMode && "dark"} `}>
+    <div className={`"relative" ${theme === "dark" && "dark"} `}>
       <Router>
-        <Navbar className="top-0" />
+        <Header />
         <Routes />
+        <button
+          className="fixed w-16 h-16 bottom-16 right-16 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold "
+          onClick={handleThemeSwitch}
+        >
+          {theme === "dark" ? "LHT" : "DRK"}
+        </button>
         <Footer />
       </Router>
     </div>

@@ -10,15 +10,15 @@ import Footer from "./HomePage_Partials/Footer";
 const [cat1, cat2, cat3, img1, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  // };
 
   return (
     <>
-      <div className={`overflow-x-hidden ${darkMode && "dark"}`}>
+      <div className="overflow-x-hidden ">
         <div className="flex flex-col min-h-screen overflow-x-hidden ">
           {/* <Navbar className="overflow-x-hidden sticky top-0" /> */}
           <main className="grow dark:bg-slate-950">
@@ -27,12 +27,12 @@ function HomePage() {
             <FeaturesZigZag images={[img1]} />
             <Developers images={[dev1, dev2]} />
             {/* <Footer /> */}
-            <button
+            {/* <button
               className="absolute w-16 h-16 bottom-16 right-16 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold "
               onClick={toggleDarkMode}
             >
               {darkMode ? "LHT" : "DRK"}
-            </button>
+            </button> */}
           </main>
         </div>
       </div>
