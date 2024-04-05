@@ -34,7 +34,7 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      toast.error(error.response.data.info.message)
+      toast.error(error.response.data.info.message);
       console.log(error);
     }
   };
@@ -105,13 +105,8 @@ const Login = () => {
               {/* for google Authorization */}
               <div className="w-full flex flex-col items-center space-y-2 p-1">
                 <a
-
                   href="http://localhost:2000/auth/google/callback"
-                  className="w-full flex flex-row h-13 cursor-pointer items-center justify-between rounded-lg border border-gray6 font-normal hover:no-underline px-2"
-=======
-                  href="/signup"
                   className="w-full flex flex-row h-13 cursor-pointer items-center text-center rounded-lg border border-gray6 hover:no-underline justify-evenly font-semibold "
-
                 >
                   <img src={google} width={50} height={50} alt="" />
                   log in with Google
