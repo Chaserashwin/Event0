@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
+// import { GiTireIronCross } from "react-icons/gi";
 
 const ShowModal = ({ closeModal, children, handleCloseButton }) => {
   useEffect(() => {
@@ -18,9 +19,16 @@ const ShowModal = ({ closeModal, children, handleCloseButton }) => {
           className="absolute right-3 top-3 rounded-full fill-current text-lg "
           onClick={closeModal}
         >
-          cross
+          {/* cross */}
           <div>
-            <img src="" alt="" />
+            {/* <GiTireIronCross /> */}
+            <img
+              src="icons/cross.png"
+              className="dark:bg-white dark:p-[1px]"
+              width={20}
+              height={20}
+              alt=""
+            />
           </div>
         </button>
         {children}

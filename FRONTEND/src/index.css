@@ -11,9 +11,13 @@
   @apply absolute inset-0 flex flex-col items-center justify-center bg-gray-400 opacity-50;
 }
 
-/* .modal-container {
-  @apply absolute pl-12 pr-10 pt-9 pb-8 sm:pl-10 sm:pr-10 hidden sm:block place-content-center max-h-screen overflow-y-auto z-50 bg-white rounded-lg shadow-lg;
-} */
+.modal-container {
+  @apply overflow-y-auto absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] min-w-[28rem] max-h-[40rem] h-auto p-[2rem]  bg-white dark:bg-slate-800 dark:text-white rounded-lg;
+}
+
+.feed-events-bucket {
+  @apply max-w-[1272px] relative pt-[24px] pb-[40px];
+}
 
 * {
   font-family: "Laila", serif;
@@ -42,7 +46,7 @@
   background-color: rgba(189, 189, 189, 0.542);
 } */
 
-.modal-container {
+/* .modal-container {
   overflow-y: auto;
   position: absolute;
   top: 50%;
@@ -53,10 +57,9 @@
   padding: 3rem 2rem;
   border-radius: 0.5rem;
   background-color: white;
-  /* margin: 1rem; */
-}
+} */
 
-.loginbutton {
+/* .loginbutton {
   border-radius: 8px;
   cursor: pointer;
   color: #fff;
@@ -64,4 +67,4 @@
   background-color: #e32359;
   border-color: #e32359;
   padding: 8px 12px;
-}
+} */

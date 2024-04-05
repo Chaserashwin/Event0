@@ -29,31 +29,9 @@ function First() {
             </div>
           </div>
           <div className="lg:w-1/2 w-full">
-            <img
-              alt="Homepage"
-              // width="379"
-              height="269"
-              // src="/images/homepage.png"
-              src="/images/home.png"
-              // src="https://th.bing.com/th/id/R.78e25dfc6c101050dfd70ca9e2825e45?rik=wIa0LEapXG06NA&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2009%2f09%2fblack-people-party_246051.png&ehk=00LZRMowGsy8i91yFXfknn8cbUU6facIsnRFd57KZU8%3d&risl=&pid=ImgRaw&r=0"
-              // className="md:hidden"
-            />
+            <img alt="Homepage" height="269" src="/images/home.png" />
           </div>
         </div>
-        {/* <div className="w-fit h-80">
-          <img
-            className="w-full hidden md:block h-auto"
-            src="/images/homepagemin.png"
-            alt="Homepage"
-            cover
-          />
-          <img
-            className="w-full md:hidden"
-            src="/images/homepage.png"
-            alt="Homepage"
-            cover
-          />
-        </div> */}
       </div>
     </>
   );
@@ -77,3 +55,19 @@ export default First;
 }
 
 // hover:from-green-400 hover:to-blue-500
+{
+  /* <div className="w-fit h-80">
+          <img
+            className="w-full hidden md:block h-auto"
+            src="/images/homepagemin.png"
+            alt="Homepage"
+            cover
+          />
+          <img
+            className="w-full md:hidden"
+            src="/images/homepage.png"
+            alt="Homepage"
+            cover
+          />
+        </div> */
+}
