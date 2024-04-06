@@ -107,9 +107,6 @@ const Login = () => {
                 <a
 
                   href="http://localhost:2000/auth/google/callback"
-                  className="w-full flex flex-row h-13 cursor-pointer items-center justify-between rounded-lg border border-gray6 font-normal hover:no-underline px-2"
-=======
-                  href="/signup"
                   className="w-full flex flex-row h-13 cursor-pointer items-center text-center rounded-lg border border-gray6 hover:no-underline justify-evenly font-semibold "
 
                 >
