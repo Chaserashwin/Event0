@@ -1,7 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+// import { NavLink } from "react-router-dom";
+import ShowModal from "../../components/ShowModal";
+import Signup from "../Signup";
 
 function First() {
+  const [showsignupModal, setShowsignupModal] = useState(false);
+  const closesignupModal = () => setShowsignupModal(false);
+  const signupModal = (
+    <ShowModal
+      closeModal={closesignupModal}
+      // handleCloseButton={handleClosesignupButton}
+    >
+      <Signup />
+    </ShowModal>
+  );
+
   return (
     <>
       <div className="w-full h-auto flex flex-col items-center sm:mt-[140px] mt-[120px]">
@@ -11,7 +25,7 @@ function First() {
         >
           <div className=" flex w-full flex-col space-y-6 mb-0 md:mr-6 md:ml-6 lg:w-7/12 md:block md:p-4 p-2 items-center">
             <h1 className="text-3xl md:text-4xl font-bold dark:text-white">
-              The people platform—Where interests become friendships
+              The people platform—Where interests become Events
             </h1>
             <p className="md:text-justify text-center md:pr-10 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
@@ -20,12 +34,19 @@ function First() {
               consequuntur, dolore vel id nemo omnis!
             </p>
             <div className="mt-0">
-              <NavLink
+              {/* <NavLink
                 className="hover:bg-gray-500 hover:text-black bg-black text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
                 to="Signup"
               >
                 Join Event0
-              </NavLink>
+              </NavLink> */}
+              <button
+                onClick={() => setShowsignupModal(true)}
+                className="hover:bg-gray-500 hover:text-black bg-black text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
+              >
+                Join Event0
+              </button>
+              {showsignupModal && signupModal}
             </div>
           </div>
           <div className="lg:w-1/2 w-full">

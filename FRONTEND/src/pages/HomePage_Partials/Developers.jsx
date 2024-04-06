@@ -24,12 +24,12 @@ function TeamSection({ images: developers }) {
               className="w-46 flex flex-col items-center md:mb-12 mb-10"
             >
               <img
-                className="rounded-lg shadow-md md:h-[300px] md:w-[250px] object-cover"
+                className="rounded-lg shadow-md object-cover"
                 src={developer?.src}
                 alt={developer?.title}
-                height={200}
-                width={200}
-                cover
+                height={300}
+                width={300}
+                // cover
               />
               {/* for profile name and role */}
               <div className="md:mt-4 mt-2">

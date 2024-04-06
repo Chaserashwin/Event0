@@ -26,7 +26,7 @@ const Images = [
     role: "FullStack Dev",
     linkedinUrl: "https://www.linkedin.com/in/ashwin--jaiswal/",
     githubUrl: "https://github.com/Chaserashwin",
-    // websiteUrl: "https://d17012002.github.io/Protfolio-Sample/",
+    // websiteUrl: "",
   },
   {
     id: 5,

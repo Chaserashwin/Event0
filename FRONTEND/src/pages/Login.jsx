@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
+import ShowModal from "../components/ShowModal";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Event0 from "/1.svg";
 import google from "/google.svg";
+import Signup from "./Signup";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -34,14 +36,26 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      toast.error(error.response.data.info.message)
+      toast.error(error.response.data.info.message);
       console.log(error);
     }
   };
 
+  //Signup Modal
+  const [showsignupModal, setShowsignupModal] = useState(false);
+  const closesignupModal = () => setShowsignupModal(false);
+  const signupModal = (
+    <ShowModal
+      closeModal={closesignupModal}
+      // handleCloseButton={handleClosesignupButton}
+    >
+      <Signup />
+    </ShowModal>
+  );
+
   return (
     <>
-      <div className="grid pl-12 pr-10 pt-9 pb-8 sm:pl-10 sm:pr-10 sm:block relative place-content-center max-h-screen overflow-y-auto bg-transparent rounded-lg ">
+      <div className="grid pt-9 pb-8 sm:pl-10 sm:pr-10 sm:block relative place-content-center max-h-screen bg-transparent rounded-lg ">
         <div className="flex flex-col items-center">
           <form className="w-full" onSubmit={submitHandler}>
             {/* Upper Container */}
@@ -50,9 +64,13 @@ const Login = () => {
               <h1 className="ds-font-title-2 mb-2 font-semibold">Log in</h1>
               <div className="flex space-x-1">
                 <span>Not a member yet?</span>
-                <a href="">Sign up</a>
+                <button onClick={() => setShowsignupModal(true)}>
+                  Sign up
+                </button>
+                {showsignupModal && signupModal}
               </div>
             </div>
+            {/* lower Container */}
             <div className="flex flex-col-reverse items-center space-y-8 md:flex-col">
               {/* for email and password authentication */}
               <div className="w-full items-center text-center">
@@ -107,7 +125,6 @@ const Login = () => {
                 <a
                   href="http://localhost:2000/auth/google/callback"
                   className="w-full flex flex-row h-13 cursor-pointer items-center text-center rounded-lg border border-gray6 hover:no-underline justify-evenly font-semibold "
-
                 >
                   <img src={google} width={50} height={50} alt="" />
                   log in with Google
