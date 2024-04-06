@@ -2,7 +2,7 @@ import React from "react";
 import MusicEvents from "../../utils/Cat_second_content";
 
 const Music = () => {
-  const [cat1] = MusicEvents;
+ const [cat1] = MusicEvents;
   return (
     <div className="m-3 w-full">
       <h2>Music</h2>
@@ -18,9 +18,9 @@ const Music = () => {
           {/* Events Container */}
           <div className="w-full flex bg-slate-500">
             {/* Event Card */}
-            {/* {categories?.map((categorie) => ( */}
+            {MusicEvents?.map((categorie) => (
             <div
-              // key={developer?.id}
+               key={categorie?.events.id}
               className="p-[8px] w-[25%] border-box border-2 border-black bg-pink-300"
             >
               <div className="flex flex-col h-[100%]">
@@ -46,7 +46,7 @@ const Music = () => {
                 </div>
               </div>
             </div>
-            {/* ))} */}
+            ))} 
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Cat = [
         src: "/images/cat1.png",
         eventInfo: {
           eventname: "Musical Night",
-          location: "Amritsar",
+          location: "Delhi",
           ticketprice: 200,
           ticketsize: 50, // for total no. of people
           likes: 0,
