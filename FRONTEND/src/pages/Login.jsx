@@ -45,10 +45,10 @@ const Login = () => {
         <div className="flex flex-col items-center">
           <form className="w-full" onSubmit={submitHandler}>
             {/* Upper Container */}
-            <div class="flex flex-col mb-1 md:mb-8 items-center">
+            <div className="flex flex-col mb-1 md:mb-8 items-center">
               <img src={Event0} alt="Event0" height={100} width={100} cover />
-              <h1 class="ds-font-title-2 mb-2 font-semibold">Log in</h1>
-              <div class="flex space-x-1">
+              <h1 className="ds-font-title-2 mb-2 font-semibold">Log in</h1>
+              <div className="flex space-x-1">
                 <span>Not a member yet?</span>
                 <a href="">Sign up</a>
               </div>
@@ -105,7 +105,6 @@ const Login = () => {
               {/* for google Authorization */}
               <div className="w-full flex flex-col items-center space-y-2 p-1">
                 <a
-
                   href="http://localhost:2000/auth/google/callback"
                   className="w-full flex flex-row h-13 cursor-pointer items-center text-center rounded-lg border border-gray6 hover:no-underline justify-evenly font-semibold "
 
