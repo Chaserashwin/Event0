@@ -5,10 +5,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "./pages/HomePage_Partials/Footer";
 import Header from "./pages/Header";
 import axios from "axios";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
-axios.defaults.baseURL = 'http://localhost:2000/';
-axios.defaults.withCredentials=true;
+axios.defaults.baseURL = "http://localhost:2000/";
+axios.defaults.withCredentials = true;
 
 function App() {
   // const [darkMode, setDarkMode] = useState(false);
@@ -43,7 +43,7 @@ function App() {
   return (
     // <div className={`"relative" ${darkMode && "dark"} `}>
     <div className={`"relative" ${theme === "dark" && "dark"} `}>
-      <Toaster position="top-center" toastOptions={{duration: 2000}} />
+      <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
       <Router>
         <Header />
         <Routes />

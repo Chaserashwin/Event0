@@ -1,211 +1,109 @@
-//v1.tailwindcss.com/components/forms
-
-import React from "react";
+import React, { useState } from "react";
+import { dummy } from "../utils/dummy";
+import { IoTicketOutline } from "react-icons/io5";
+import { TiTickOutline } from "react-icons/ti";
+import { SlCalender } from "react-icons/sl";
 
 function FindEvent() {
+  const [search, setSearch] = useState("");
+  console.log(search);
   return (
-    <div>
-      <h2>FindEvent</h2>
-      <div class="min-h-screen bg-gray-100 p-0 sm:p-12">
-        <div class="mx-auto max-w-md px-6 py-12 bg-white border-0 shadow-lg sm:rounded-3xl">
-          <h1 class="text-2xl font-bold mb-8">Form With Floating Labels</h1>
-          <form id="form" novalidate>
-            <div class="relative z-0 w-full mb-5">
-              <input
-                type="text"
-                name="name"
-                placeholder=" "
-                required
-                class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              />
-              <label
-                for="name"
-                class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-              >
-                Enter name
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Name is required
-              </span>
-            </div>
-
-            <div class="relative z-0 w-full mb-5">
-              <input
-                type="email"
-                name="email"
-                placeholder=" "
-                class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              />
-              <label
-                for="email"
-                class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-              >
-                Enter email address
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Email address is required
-              </span>
-            </div>
-
-            <div class="relative z-0 w-full mb-5">
-              <input
-                type="password"
-                name="password"
-                placeholder=" "
-                class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              />
-              <label
-                for="password"
-                class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-              >
-                Enter password
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Password is required
-              </span>
-            </div>
-
-            <fieldset class="relative z-0 w-full p-px mb-5">
-              <legend class="absolute text-gray-500 transform scale-75 -top-3 origin-0">
-                Choose an option
-              </legend>
-              <div class="block pt-3 pb-2 space-x-4">
-                <label>
-                  <input
-                    type="radio"
-                    name="radio"
-                    value="1"
-                    class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"
-                  />
-                  Option 1
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="radio"
-                    value="2"
-                    class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"
-                  />
-                  Option 2
-                </label>
-              </div>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Option has to be selected
-              </span>
-            </fieldset>
-
-            <div class="relative z-0 w-full mb-5">
-              <select
-                name="select"
-                value=""
-                onclick="this.setAttribute('value', this.value);"
-                class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              >
-                <option value="" selected disabled hidden></option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
-                <option value="5">Option 5</option>
-              </select>
-              <label
-                for="select"
-                class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-              >
-                Select an option
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Option has to be selected
-              </span>
-            </div>
-
-            <div class="flex flex-row space-x-4">
-              <div class="relative z-0 w-full mb-5">
-                <input
-                  type="text"
-                  name="date"
-                  placeholder=" "
-                  onclick="this.setAttribute('type', 'date');"
-                  class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                />
-                <label
-                  for="date"
-                  class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
+    <div className=" dark:bg-slate-950">
+      <div className="w-full h-auto min-h-screen flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto mt-20 sm:mt-0 px-4 sm:px-6">
+        {/* heading of component */}
+        <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
+          <p
+            className="bg-gradient-to-r 
+         from-pink-500 to-yellow-500 hover:from-yellow-500 hover:to-pink-500 font-bold text-3xl md:text-4xl text-center "
+          >
+            Find Events
+          </p>
+          <div className="w-36 h-1 border-b-4 border-yellow-400 rounded-2xl md:mt-4 mt-2 mb-12"></div>
+        </div>
+        <form className="text-center">
+          <input
+            className="border border-black my-3 mx-3 px-3 py-2 dark:bg-slate-600 dark:text-white rounded-lg"
+            type="search"
+            placeholder="search Event Name"
+            name=""
+            id=""
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+        <div className="mb-2 px-0 lg:mb-10 w-full p-2">
+          <div className="flex flex-col flex-wrap gap-2  sm:flex-row sm:gap-16  sm:justify-center">
+            {/* event card starts here */}
+            {dummy
+              .filter((item) => {
+                return search.toLowerCase() === ""
+                  ? item
+                  : item.eventname.toLowerCase().includes(search);
+              })
+              .map((item) => (
+                <div
+                  key={item?.id}
+                  className="flex break-words bg-transparent bg-white dark:bg-slate-700 bg-cover bg-clip-padding p-0 transition-shadow duration-300 px-4 pt-6 pb-5 sm:px-0 sm:pt-0 sm:flex-row sm:justify-start sm:rounded sm:w-[272px] border-gray-300 border-b-[1px]"
                 >
-                  Date
-                </label>
-                <span class="text-sm text-red-600 hidden" id="error">
-                  Date is required
-                </span>
-              </div>
-              <div class="relative z-0 w-full">
-                <input
-                  type="text"
-                  name="time"
-                  placeholder=" "
-                  onclick="this.setAttribute('type', 'time');"
-                  class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                />
-                <label
-                  for="time"
-                  class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-                >
-                  Time
-                </label>
-                <span class="text-sm text-red-600 hidden" id="error">
-                  Time is required
-                </span>
-              </div>
-            </div>
-
-            <div class="relative z-0 w-full mb-5">
-              <input
-                type="number"
-                name="money"
-                placeholder=" "
-                class="pt-3 pb-2 pl-5 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              />
-              <div class="absolute top-0 left-0 mt-3 ml-1 text-gray-400">$</div>
-              <label
-                for="money"
-                class="absolute duration-300 top-3 left-5 -z-1 origin-0 text-gray-500"
-              >
-                Amount
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Amount is required
-              </span>
-            </div>
-
-            <div class="relative z-0 w-full mb-5">
-              <input
-                type="text"
-                name="duration"
-                placeholder=" "
-                class="pt-3 pb-2 pr-12 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-              />
-              <div class="absolute top-0 right-0 mt-3 mr-4 text-gray-400">
-                min
-              </div>
-              <label
-                for="duration"
-                class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500"
-              >
-                Duration
-              </label>
-              <span class="text-sm text-red-600 hidden" id="error">
-                Duration is required
-              </span>
-            </div>
-
-            <button
-              id="button"
-              type="button"
-              class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-pink-500 hover:bg-pink-600 hover:shadow-lg focus:outline-none"
-            >
-              Toggle Error
-            </button>
-          </form>
+                  <a
+                    href=""
+                    className="group inline w-full cursor-pointer hover:no-underline "
+                  >
+                    <div className="h-full w-full flex flex-row sm:flex-col-reverse dark:text-gray-200">
+                      {/* content of card */}
+                      <div className="grow space-y-2 pr-4 md:mt-3">
+                        {/* title container */}
+                        <h3 className="text-lg font-semibold  line-clamp-4 group-hover:underline sm:text-xl sm:leading-6 overflow-wrap-anywhere">
+                          {item?.eventname}
+                        </h3>
+                        {/* Organizer container */}
+                        <p className="text-sm font-medium line-clamp-2">
+                          Hosted by: {item?.organiser}
+                        </p>
+                        {/* date container */}
+                        <div>
+                          <div className="flex items-center space-x-1.5 ">
+                            <div>
+                              <SlCalender />
+                            </div>
+                            <div className="flex flex-col text-[12px] sm:text-sm uppercase leading-5 tracking-tight">
+                              {item?.date} . {item?.time}
+                            </div>
+                          </div>
+                        </div>
+                        {/* price container */}
+                        <div className="flex flex-wrap gap-x-4 lg:pt-1 text-[14px]">
+                          <div className="flex items-center space-x-1.5 ">
+                            <TiTickOutline />
+                            <span>{item?.ticketsize}</span>
+                          </div>
+                          <div className="flex items-center space-x-1.5">
+                            <div>
+                              <IoTicketOutline />
+                            </div>
+                            <span className="inline">{item?.ticketprice}</span>
+                          </div>
+                        </div>
+                      </div>
+                      {/* image of card */}
+                      <div className="ml-3 bg-transparent sm:ml-0 lg:mr-0 sm:min-w-[90px]">
+                        <div
+                          className="overflow-hidden bg-transparent sm:w-full h-[90px] w-[90px]
+                      sm:h-[153px]"
+                        >
+                          <img
+                            src={item?.src}
+                            alt={item?.title}
+                            loading="lazy"
+                            decoding="async"
+                            className="rounded-lg w-full h-full top-0 left-0 object-cover "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </div>
@@ -213,42 +111,3 @@ function FindEvent() {
 }
 
 export default FindEvent;
-
-// <!-- component -->
-// <!-- Code on GiHub: https://github.com/vitalikda/form-floating-labels-tailwindcss -->
-// <style>
-//   .-z-1 {
-//     z-index: -1;
-//   }
-
-//   .origin-0 {
-//     transform-origin: 0%;
-//   }
-
-//   input:focus ~ label,
-//   input:not(:placeholder-shown) ~ label,
-//   textarea:focus ~ label,
-//   textarea:not(:placeholder-shown) ~ label,
-//   select:focus ~ label,
-//   select:not([value='']):valid ~ label {
-//     /* @apply transform; scale-75; -translate-y-6; */
-//     --tw-translate-x: 0;
-//     --tw-translate-y: 0;
-//     --tw-rotate: 0;
-//     --tw-skew-x: 0;
-//     --tw-skew-y: 0;
-//     transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate))
-//       skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-//     --tw-scale-x: 0.75;
-//     --tw-scale-y: 0.75;
-//     --tw-translate-y: -1.5rem;
-//   }
-
-//   input:focus ~ label,
-//   select:focus ~ label {
-//     /* @apply text-black; left-0; */
-//     --tw-text-opacity: 1;
-//     color: rgba(0, 0, 0, var(--tw-text-opacity));
-//     left: 0px;
-//   }
-// </style>

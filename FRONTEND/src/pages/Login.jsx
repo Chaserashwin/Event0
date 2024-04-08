@@ -77,7 +77,7 @@ const Login = () => {
                 <div className="flex flex-col w-full space-y-6">
                   {/* for email */}
                   <div className="flex flex-col w-full">
-                    <div className="w-full flex flex-row items-baseline justify-between">
+                    <div className="w-full flex flex-row items-baseline justify-between mt-3">
                       <label className="mb-1 font-medium">Email</label>
                     </div>
                     <input

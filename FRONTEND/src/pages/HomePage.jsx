@@ -1,38 +1,46 @@
-import React, { useState } from "react";
-// import Navbar from "./Navbar";
+import React, { Suspense, lazy, useState } from "react";
 import LandingPageDevelopers from "../utils/homepage_second_content";
-import First from "./HomePage_Partials/First";
-import FeaturesZigZag from "./HomePage_Partials/FeaturesZigZag";
-import Developers from "./HomePage_Partials/Developers";
-import OurCategories from "./HomePage_Partials/OurCategories";
-import Footer from "./HomePage_Partials/Footer";
+// import First from "./HomePage_Partials/First";
+// import FeaturesZigZag from "./HomePage_Partials/FeaturesZigZag";
+// import Developers from "./HomePage_Partials/Developers";
+// import OurCategories from "./HomePage_Partials/OurCategories";
+// import EventCollection from "./HomePage_Partials/EventCollection";
 
-const [cat1, cat2, cat3, img1, dev1, dev2] = LandingPageDevelopers;
+const First = lazy(() => import("../pages/HomePage_Partials/First"));
+const OurCategories = lazy(() =>
+  import("../pages/HomePage_Partials/OurCategories")
+);
+const EventCollection = lazy(() =>
+  import("../pages/HomePage_Partials/EventCollection")
+);
+const FeaturesZigZag = lazy(() =>
+  import("../pages/HomePage_Partials/FeaturesZigZag")
+);
+const Developers = lazy(() => import("../pages/HomePage_Partials/Developers"));
+
+const [cat1, cat2, cat3, mic, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
-  // const [darkMode, setDarkMode] = useState(false);
-
-  // const toggleDarkMode = () => {
-  //   setDarkMode(!darkMode);
-  // };
-
   return (
     <>
-      <div className="overflow-x-hidden ">
+      <div className="overflow-x-hidden">
         <div className="flex flex-col min-h-screen overflow-x-hidden ">
-          {/* <Navbar className="overflow-x-hidden sticky top-0" /> */}
           <main className="grow dark:bg-slate-950">
-            <First />
-            <OurCategories images={[cat1, cat2, cat3]} />
-            <FeaturesZigZag images={[img1]} />
-            <Developers images={[dev1, dev2]} />
-            {/* <Footer /> */}
-            {/* <button
-              className="absolute w-16 h-16 bottom-16 right-16 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold "
-              onClick={toggleDarkMode}
-            >
-              {darkMode ? "LHT" : "DRK"}
-            </button> */}
+            <Suspense fallback="loading...">
+              <First />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <OurCategories images={[cat1, cat2, cat3]} />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <EventCollection />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <FeaturesZigZag images={[mic]} />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <Developers images={[dev1, dev2]} />
+            </Suspense>
           </main>
         </div>
       </div>
