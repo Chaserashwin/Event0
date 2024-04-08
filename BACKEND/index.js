@@ -30,7 +30,7 @@ app.use(passport.session());
 
 
 app.use("/",routes);
-
+app.use("/Uploads",express.static("./Uploads"));
 
 
 

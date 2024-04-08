@@ -9,6 +9,7 @@ import Music from "./pages/Event_Categories/Music";
 import Business from "./pages/Event_Categories/Business";
 import College from "./pages/Event_Categories/College";
 import ShowModal from "./components/ShowModal";
+import CreateEvent from "./pages/CreateEvent";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -32,6 +33,10 @@ const ProjectRoutes = () => {
       path: "college",
       element: <College />,
     },
+    {
+      path:"createevent",
+      element: <CreateEvent />
+    }
   ]);
   return element;
 };
