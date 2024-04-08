@@ -1,27 +1,17 @@
 import React from "react";
+import { useState } from "react";
+import ShowModal from "../components/ShowModal";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { BiSolidToggleRight } from "react-icons/bi";
 import Event0 from "/1.svg";
 import { NavLink } from "react-router-dom";
-import ShowModal from "../components/ShowModal";
 import Login from "./Login";
-import { useState } from "react";
 import Signup from "./Signup";
 
 const Navbar = () => {
+  //login Modal
   const [showloginModal, setShowloginModal] = useState(false);
-  const [showsignupModal, setShowsignupModal] = useState(false);
-
   const closeloginModal = () => setShowloginModal(false);
-  const closesignupModal = () => setShowsignupModal(false);
-
-  // const handleCloseloginButton = (
-  //   <button onClick={closeloginModal}>Accept it</button>
-  // );
-  // const handleClosesignupButton = (
-  //   <button onClick={closesignupModal}>Accept it</button>
-  // );
-
   const loginModal = (
     <ShowModal
       closeModal={closeloginModal}
@@ -30,7 +20,13 @@ const Navbar = () => {
       <Login />
     </ShowModal>
   );
+  // const handleCloseloginButton = (
+  //   <button onClick={closeloginModal}>Accept it</button>
+  // );
 
+  //Signup Modal
+  const [showsignupModal, setShowsignupModal] = useState(false);
+  const closesignupModal = () => setShowsignupModal(false);
   const signupModal = (
     <ShowModal
       closeModal={closesignupModal}
@@ -39,6 +35,10 @@ const Navbar = () => {
       <Signup />
     </ShowModal>
   );
+
+  // const handleClosesignupButton = (
+  //   <button onClick={closesignupModal}>Accept it</button>
+  // );
 
   return (
     <>
@@ -98,9 +98,13 @@ const Navbar = () => {
           </div>
         </ul>
         <div className="md:hidden dark:text-white py-1 items-center">
-          <a className="text-4xl" href="#">
+          {/* <a className="text-4xl" href="#">
             &#8801;
-          </a>
+          </a> */}
+          <div className="px-2 py-2 dark:text-white rounded font-bold cursor-pointer">
+            <button onClick={() => setShowloginModal(true)}>Log in</button>
+            {showloginModal && loginModal}
+          </div>
         </div>
       </nav>
     </>
