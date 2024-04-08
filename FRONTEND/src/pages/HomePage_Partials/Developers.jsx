@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaLink } from "react-icons/fa";
 function TeamSection({ images: developers }) {
   return (
     <>
-      <div className="w-full h-auto flex flex-wrap flex-col items-center text-center md:p-10 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="w-full h-auto flex flex-wrap flex-col md:p-10 max-w-6xl mx-auto px-4 sm:px-6  items-center text-center ">
         {/* <br /> */}
         <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
           <p
@@ -24,11 +24,13 @@ function TeamSection({ images: developers }) {
               className="w-46 flex flex-col items-center md:mb-12 mb-10"
             >
               <img
-                className="rounded-lg shadow-md object-cover"
                 src={developer?.src}
                 alt={developer?.title}
                 height={300}
                 width={300}
+                loading="lazy"
+                decoding="async"
+                className="rounded-lg shadow-md object-cover"
                 // cover
               />
               {/* for profile name and role */}

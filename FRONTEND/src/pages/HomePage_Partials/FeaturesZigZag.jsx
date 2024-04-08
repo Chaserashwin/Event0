@@ -34,11 +34,13 @@ function FeaturesZigzag({ images }) {
                 data-aos="fade-up"
               >
                 <img
-                  className="max-w-full mx-auto md:max-w-none h-auto"
                   src={images[0].src}
+                  alt={images[0].title}
                   width="540"
                   height="405"
-                  alt={images[0].title}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-w-full mx-auto md:max-w-none h-auto"
                 />
               </div>
               {/* Content */}
