@@ -17,7 +17,7 @@ module.exports.addEvent=(req,res)=>{
     
     var newEvent=req.body;
     console.log(req.file);
-    newEvent.image = req.file ? req.file.path : "";
+    newEvent.imageUpload = req.file ? req.file.path : "";
     var EventData=new addEvent(newEvent)
     EventData.save()
     .then((data)=>{
@@ -27,6 +27,17 @@ module.exports.addEvent=(req,res)=>{
       return res.status(500).json({ error: "Failed to save the event to MongoDB" });
    })
 }
+// display events
+module.exports.display=async(req,res)=>{
+    try {
+        const getevent= await addEvent.find();
+        res.status(200).json({status:200,getevent})
+    } catch (error) {
+        res.status(400).json({status:400,error})
+    }
+}
+
+
 module.exports.findEvent=(req, res) => {
     const array=[];
 return addEvent.find({title:req.body.title})

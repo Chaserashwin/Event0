@@ -2,7 +2,7 @@ import React from "react";
 import MusicEvents from "../../utils/Cat_second_content";
 
 const Music = () => {
-  const [cat1] = MusicEvents;
+ const [cat1] = MusicEvents;
   return (
     <div className="m-3 w-full">
       <h2>Music</h2>
@@ -45,7 +45,7 @@ const Music = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             ))}
           </div>
         </div>

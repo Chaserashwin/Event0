@@ -10,11 +10,11 @@ const storefile = multer.diskStorage({
   });
   
   function fileFilter(req, file, cb) {
-    if (file.mimetype !== "image/png") {
-      return cb(new Error("something went wrong"), false);
+    if (file.mimetype.startsWith("image")) {
+      return cb(null, true);
       // return cb(err, false);
     } else {
-      return cb(null, true);
+      return cb(new Error("something went wrong"), false);
     }
   }
   
