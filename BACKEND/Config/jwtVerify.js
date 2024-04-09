@@ -1,6 +1,6 @@
 const jwt=require("jsonwebtoken");
 
-
+//Authenticating user for login(verifying token)
 module.exports.verifyToken=(req,res,next)=>{
     var token
     if('authorization' in req.headers){

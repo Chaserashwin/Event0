@@ -4,6 +4,7 @@ var passportLocal=require("passport-local").Strategy;
 var registerUser=require("../Model/newUserModel");
 var bcrypt=require("bcrypt");
 
+//for checking email password for login
 passport.use(
     new passportLocal({usernameField:"email"},(email,password,done)=>{
         registerUser.findOne({email:email})

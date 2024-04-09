@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FindEvent = lazy(() => import("./pages/FindEvent"));
+const CreateEvent = lazy(()=> import('./pages/CreateEvent'))
 
 
 const ProjectRoutes = () => {
@@ -40,7 +41,11 @@ const ProjectRoutes = () => {
     },
     {
       path:"createevent",
-      element: <CreateEvent />
+      
+      element: 
+      <Suspense fallback={<div>loading...</div>}>
+        <CreateEvent />
+        </Suspense>
     }
   ]);
   return element;
