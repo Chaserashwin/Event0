@@ -1,10 +1,5 @@
 import React, { Suspense, lazy, useState } from "react";
 import LandingPageDevelopers from "../utils/homepage_second_content";
-// import First from "./HomePage_Partials/First";
-// import FeaturesZigZag from "./HomePage_Partials/FeaturesZigZag";
-// import Developers from "./HomePage_Partials/Developers";
-// import OurCategories from "./HomePage_Partials/OurCategories";
-// import EventCollection from "./HomePage_Partials/EventCollection";
 
 const First = lazy(() => import("../pages/HomePage_Partials/First"));
 const OurCategories = lazy(() =>
