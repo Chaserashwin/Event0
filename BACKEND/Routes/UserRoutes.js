@@ -2,6 +2,7 @@ const express = require("express");
 var upload = require("../uploadmodule");
 var cors = require("cors");
 
+
 var userRoutes = express.Router();
 var userCtrl = require("../Controller/UserController");
 var verifyjwt = require("../Config/jwtVerify");
@@ -21,3 +22,4 @@ userRoutes.get("/auth/google/callback", userCtrl.googleCallback);
 userRoutes.get("/login/success", userCtrl.loginSuccess);
 
 module.exports = userRoutes;
+

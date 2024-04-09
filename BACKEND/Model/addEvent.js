@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 var addEventSchema = mongoose.Schema({
   eventcategory: {
     type: String,
@@ -34,3 +35,4 @@ var addEventSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model("AddEvent", addEventSchema);
+
