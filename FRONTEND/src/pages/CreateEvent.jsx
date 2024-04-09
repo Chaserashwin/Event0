@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
@@ -61,6 +62,7 @@ function CreateEvent() {
             {/* for Event Category */}
             <div>
               <label class=" dark:text-gray-200">Category</label>
+
               <input
                 type="text"
                 name="eventcategory"
@@ -72,6 +74,7 @@ function CreateEvent() {
             {/* for Event Title */}
             <div>
               <label class=" dark:text-gray-200">Title</label>
+
               <input
                 type="text"
                 name="eventname"
@@ -83,6 +86,7 @@ function CreateEvent() {
             {/* for Description */}
             <div>
               <label class=" dark:text-gray-200">Description</label>
+
               <textarea
                 type="textarea"
                 name="description"
@@ -116,6 +120,7 @@ function CreateEvent() {
                       class="cursor-pointer  rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 bg-slate-400 border-black border-2"
                     >
                       <span class="">Upload a file</span>
+
                       <input
                         type="file"
                         name="imageUpload"
@@ -135,6 +140,7 @@ function CreateEvent() {
             {/* for Organized by */}
             <div>
               <label class=" dark:text-gray-200">Organized By</label>
+
               <input
                 type="text"
                 name="organizer"
@@ -146,6 +152,7 @@ function CreateEvent() {
             {/* for Location */}
             <div>
               <label class=" dark:text-gray-200">Location</label>
+
               <input
                 type="text"
                 name="location"
@@ -157,6 +164,7 @@ function CreateEvent() {
             {/* for date */}
             <div>
               <label class=" dark:text-gray-200">Event Date</label>
+
               <input
                 datepicker
                 datepicker-format="mm/dd/yyyy"
@@ -183,6 +191,7 @@ function CreateEvent() {
             {/* for ticketPrice */}
             <div>
               <label class=" dark:text-gray-200">Ticket Price</label>
+
               <input
                 type="number"
                 min={100}
@@ -196,6 +205,7 @@ function CreateEvent() {
             {/* for ticketPrice */}
             <div>
               <label class=" dark:text-gray-200">Total Number of Seats</label>
+
               <input
                 type="number"
                 name="totalcapacity"

@@ -1,22 +1,25 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 
-var userSchema=new mongoose.Schema({
-    googleId:{
-        type:String
+var userSchema = new mongoose.Schema(
+  {
+    googleId: {
+      type: String,
     },
-    displayName:{
-        type:String,
-        required:true
+    displayName: {
+      type: String,
+      required: true,
     },
-    email:{
-        type:String
+    email: {
+      type: String,
     },
-    password:{
-        type:String
+    password: {
+      type: String,
     },
-    image:{
-        type:String
-    }
-},{timestamps:true});
+    image: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports=mongoose.model('googleLogin',userSchema);
+module.exports = mongoose.model("googleLogin", userSchema);
