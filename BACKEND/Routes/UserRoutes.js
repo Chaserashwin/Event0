@@ -12,6 +12,7 @@ userRoutes.post("/addEvent", upload.single("imageUpload"), userCtrl.addEvent);
 userRoutes.post("/register", userCtrl.Register);
 userRoutes.post("/login", userCtrl.loginUser);
 userRoutes.get("/myprofile", verifyjwt.verifyToken, userCtrl.profile);
+userRoutes.get("/logout", verifyjwt.verifyToken, userCtrl.logout);
 //for displaying events
 userRoutes.get("/displayevent", userCtrl.display);
 //for find event
@@ -20,6 +21,7 @@ userRoutes.get("/displayevent", userCtrl.display);
 userRoutes.get("/auth/google", userCtrl.loginWithGoogle);
 userRoutes.get("/auth/google/callback", userCtrl.googleCallback);
 userRoutes.get("/login/success", userCtrl.loginSuccess);
+userRoutes.get("/logoutgoogle", userCtrl.logoutgoogle);
 
 module.exports = userRoutes;
 

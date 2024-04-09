@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ShowModal from "../components/ShowModal";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { BiSolidToggleRight } from "react-icons/bi";
@@ -7,8 +7,39 @@ import Event0 from "/1.svg";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
+import { loginContext } from "../Context/UserContext";
+import axios from "axios";
 
 const Navbar = () => {
+  //to use usecontext
+  const { logindata, setLogindata, logingoogle, setLogingoogle } =
+    useContext(loginContext);
+
+  //for logout from google
+  const logout = () => {
+    window.open("http://localhost:2000/logoutgoogle");
+  };
+  //for logout manually
+  const clickHandler = async () => {
+    let token = localStorage.getItem("token");
+    const res = await axios.get("/logout", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+        Accept: "application/json",
+      },
+      Credentials: "include",
+    });
+    const data = res;
+    console.log(data);
+    if (data.status == 200 || data) {
+      console.log("user logout");
+      token = localStorage.removeItem("token");
+      setLogindata(false);
+    } else {
+      console.log("error");
+    }
+  };
   //login Modal
   const [showloginModal, setShowloginModal] = useState(false);
   const closeloginModal = () => setShowloginModal(false);
@@ -64,48 +95,83 @@ const Navbar = () => {
           />
         </div> */}
         {/* for other links */}
-        {/* <ul className="md:flex hidden font-semibold items-center gap-2">
-          <li className="">
+        <ul className="md:flex hidden font-semibold items-center gap-2">
+          {/* <li className="">
             <a className="p-1 hover:bg-slate-400 hover:rounded-full " href="#">
               <span className="text-blue">Find</span>
               <span className="text-green">Event</span>
             </a>
-          </li>
-          <li className="">
-            <a className="p-1 hover:bg-slate-400 hover:rounded-full " href="#">
-              <span className="text-blue">Create</span>
-              <span className="text-green">Event</span>
+          </li> */}
+          {/* <li className="">
+            <a className="p-1 hover:bg-slate-400 hover:rounded-full " href="/createevent">
+              <span className="text-blue">CreateEvent</span>
             </a>
-          </li>
-          <li className="mx-1">
+          </li> */}
+          {/* <li className="mx-1">
             <a className="p-2 " href="#">
               <TfiAnnouncement className="h-7 w-7 " />
             </a>
           </li>
           <li className="mx-1">
             <BiSolidToggleRight className="h-8 w-8 cursor-pointer" />
+          </li>*/}
+        </ul>  
+        {/* for login and signup*/}
+
+        {/*for diplaying user data if loged in*/}
+        {logindata.validUser ? (
+          <ul className="flex">
+            <li className="">
+            <NavLink to="/createevent"><span className="text-blue">CreateEvent</span></NavLink>
+              
           </li>
-        </ul> */}
-        {/* for login and signup */}
-        <ul className="md:flex hidden font-semibold items-center gap-2">
-          <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
-            <button onClick={() => setShowloginModal(true)}>Log in</button>
-            {showloginModal && loginModal}
-          </div>
-          <div className="hidden md:block px-2 py-2  bg-[#00798a] dark:bg-indigo-800 text-white rounded font-bold cursor-pointer">
-            <button onClick={() => setShowsignupModal(true)}>Sign up</button>
-            {showsignupModal && signupModal}
-          </div>
-        </ul>
-        <div className="md:hidden dark:text-white py-1 items-center">
-          {/* <a className="text-4xl" href="#">
+            <li className="mx-1">
+              {logindata.validUser.name[0].toUpperCase()}
+            </li>
+            <li>
+              <button onClick={clickHandler}>Logout</button>
+            </li>
+          </ul>
+        ) : logingoogle ? (
+          <ul className="flex">
+            <li className="">
+            <NavLink to="/createevent"><span className="text-blue">CreateEvent</span></NavLink>
+              
+            
+          </li>
+            <li className="mx-1">
+              {/* {userdata.displayName[0].toUpperCase()} */}
+              <img src={logingoogle.image} className="w-10 rounded"></img>
+            </li>
+            <li>
+              <button onClick={logout}>Logout</button>
+            </li>
+          </ul>
+        ) : (
+          <div>
+            <ul className="md:flex hidden font-semibold items-center gap-2">
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <button onClick={() => setShowloginModal(true)}>Log in</button>
+                {showloginModal && loginModal}
+              </div>
+              <div className="hidden md:block px-2 py-2  bg-[#00798a] dark:bg-indigo-800 text-white rounded font-bold cursor-pointer">
+                <button onClick={() => setShowsignupModal(true)}>
+                  Sign up
+                </button>
+                {showsignupModal && signupModal}
+              </div>
+            </ul>
+            <div className="md:hidden dark:text-white py-1 items-center">
+              {/* <a className="text-4xl" href="#">
             &#8801;
           </a> */}
-          <div className="px-2 py-2 dark:text-white rounded font-bold cursor-pointer">
-            <button onClick={() => setShowloginModal(true)}>Log in</button>
-            {showloginModal && loginModal}
+              <div className="px-2 py-2 dark:text-white rounded font-bold cursor-pointer">
+                <button onClick={() => setShowloginModal(true)}>Log in</button>
+                {showloginModal && loginModal}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </>
   );
