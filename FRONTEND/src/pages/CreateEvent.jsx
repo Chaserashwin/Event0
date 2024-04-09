@@ -3,6 +3,7 @@ import React from "react";
 
 import { useState,} from "react"
 import axios from 'axios';
+import { toast } from "react-hot-toast";
 function CreateEvent() {
   
 
@@ -42,7 +43,7 @@ function CreateEvent() {
       .post("/addEvent", formData,config)
       .then((response) => {
         console.log("Event posted successfully:", response.data);
-        
+        toast.success("Event Created Successfully");
       })
       .catch((error) => {
         console.error("Error posting event:", error);
@@ -241,11 +242,11 @@ function CreateEvent() {
           </div>
         </form>
       </div>
+    
+    
+
     </>
   )
 }
 
 export default CreateEvent
-
-
-
