@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoTicketOutline } from "react-icons/io5";
 import { TiTickOutline } from "react-icons/ti";
 import { SlCalender } from "react-icons/sl";
 import Eventsinfo from "../../utils/Eventsinfo";
+// import EventCard from "../../components/EventCard";
+import Card from "../../components/Card";
+// import { useState } from "react";
 
 const [img0, img1, img2, img3, img4, img5, img6, img7] = Eventsinfo;
 
 function EventCollection() {
+  const [search, setSearch] = useState("");
   return (
     <>
       <div className="w-full h-auto flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto md:mb-8 mt-20 px-4 sm:px-6">
@@ -43,70 +47,7 @@ function EventCollection() {
             <div className="flex flex-col flex-wrap gap-2  sm:flex-row sm:gap-16  sm:justify-center">
               {/* event card starts here */}
               {Eventsinfo?.map((Eventinfo) => (
-                <div
-                  key={Eventinfo?.id}
-                  className="flex break-words bg-transparent bg-white bg-cover bg-clip-padding p-0 transition-shadow duration-300 px-4 pt-6 pb-5 sm:px-0 sm:pt-0 sm:flex-row sm:justify-start sm:rounded sm:w-[272px] border-gray-300 border-b-[1px]"
-                >
-                  <a
-                    href=""
-                    className="group inline w-full cursor-pointer hover:no-underline "
-                  >
-                    <div className="h-full w-full flex flex-row sm:flex-col-reverse">
-                      {/* content of card */}
-                      <div className="grow space-y-2 pr-4 md:mt-3">
-                        {/* title container */}
-                        <h3 className="text-lg font-semibold  line-clamp-4 group-hover:underline sm:text-xl sm:leading-6 overflow-wrap-anywhere">
-                          {Eventinfo?.eventname}
-                        </h3>
-                        {/* Organizer container */}
-                        <p className="text-sm font-medium text-gray-300 line-clamp-2">
-                          Hosted by: {Eventinfo?.organiser}
-                        </p>
-                        {/* date container */}
-                        <div>
-                          <div className="flex items-center space-x-1.5 text-gray-400">
-                            <div>
-                              <SlCalender />
-                            </div>
-                            <div className="flex flex-col text-[12px] sm:text-sm uppercase leading-5 tracking-tight">
-                              {Eventinfo?.date} . {Eventinfo?.time}
-                            </div>
-                          </div>
-                        </div>
-                        {/* price container */}
-                        <div className="flex flex-wrap gap-x-4 lg:pt-1 text-[14px]">
-                          <div className="flex items-center space-x-1.5 text-gray7">
-                            <TiTickOutline />
-                            <span>{Eventinfo?.ticketsize}</span>
-                          </div>
-                          <div className="flex items-center space-x-1.5 text-gray7">
-                            <div>
-                              <IoTicketOutline />
-                            </div>
-                            <span className="inline">
-                              {Eventinfo?.ticketprice}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      {/* image of card */}
-                      <div className="ml-3 bg-transparent sm:ml-0 lg:mr-0 sm:min-w-[90px]">
-                        <div
-                          className="overflow-hidden bg-transparent sm:w-full h-[90px] w-[90px]
-                      sm:h-[153px]"
-                        >
-                          <img
-                            src={Eventinfo?.src}
-                            alt={Eventinfo?.title}
-                            loading="lazy"
-                            decoding="async"
-                            className="rounded-lg w-full h-full top-0 left-0 object-cover "
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                <Card item={Eventinfo} />
               ))}
             </div>
           </div>

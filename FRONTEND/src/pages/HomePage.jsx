@@ -35,9 +35,9 @@ function HomePage() {
             <Suspense fallback="loading...">
               <EventCollection />
             </Suspense>
-            <Suspense fallback="loading...">
+            {/* <Suspense fallback="loading...">
               <FeaturesZigZag images={[mic]} />
-            </Suspense>
+            </Suspense> */}
             <Suspense fallback="loading...">
               <Developers images={[dev1, dev2]} />
             </Suspense>
