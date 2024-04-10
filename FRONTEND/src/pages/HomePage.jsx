@@ -1,8 +1,4 @@
 import React, { Suspense, lazy, useState } from "react";
-import { useContext, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { loginContext } from "../Context/UserContext";
 import LandingPageDevelopers from "../utils/homepage_second_content";
 
 // import OurCategories from "../pages/HomePage_Partials/OurCategories";
