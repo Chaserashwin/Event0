@@ -12,6 +12,10 @@ const OurCategories = lazy(() =>
 const EventCollection = lazy(() =>
   import("../pages/HomePage_Partials/EventCollection")
 );
+const AddedEvents = lazy(() =>
+  import("../pages/HomePage_Partials/AddedEvents")
+);
+
 const FeaturesZigZag = lazy(() =>
   import("../pages/HomePage_Partials/FeaturesZigZag")
 );
@@ -77,6 +81,9 @@ function HomePage() {
             </Suspense>
             <Suspense fallback="loading...">
               <EventCollection />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <AddedEvents />
             </Suspense>
             {/* <Suspense fallback="loading...">
               <FeaturesZigZag images={[mic]} />

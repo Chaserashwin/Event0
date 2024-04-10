@@ -3,24 +3,22 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-
 function CreateEvent() {
-   
-
   const [formData, setFormData] = useState({
-    eventcategory: "",
+    src: "",
+    catname: "",
     eventname: "",
-    organizer: "",
-    eventdate: "",
-    eventtime: "",
     location: "",
-    ticketPrice: 0,
-    totalcapacity: 0,
-    imageUpload: "",
+    ticketprice: 0,
+    ticketsize: 0,
+    description: "",
+    organiser: "",
+    date: "",
+    time: "",
   });
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    setFormData((prevState) => ({ ...prevState, imageUpload: file }));
+    setFormData((prevState) => ({ ...prevState, src: file }));
   };
   // console.log(formData);
   const handleChange = (e) => {
@@ -70,8 +68,8 @@ function CreateEvent() {
 
               <input
                 type="text"
-                name="eventcategory"
-                value={formData.eventcategory}
+                name="catname"
+                value={formData.catname}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
@@ -128,7 +126,7 @@ function CreateEvent() {
 
                       <input
                         type="file"
-                        name="imageUpload"
+                        name="src"
                         onChange={handleImageUpload}
                         // class="sr-only"
                         className="w-auto  p-0 m-1 "
@@ -148,15 +146,15 @@ function CreateEvent() {
 
               <input
                 type="text"
-                name="organizer"
-                value={formData.organizer}
+                name="organiser"
+                value={formData.organiser}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
-            {/* for Location */}
+            {/* for location */}
             <div>
-              <label class=" dark:text-gray-200">Location</label>
+              <label class=" dark:text-gray-200">location</label>
 
               <input
                 type="text"
@@ -174,8 +172,8 @@ function CreateEvent() {
                 datepicker
                 datepicker-format="mm/dd/yyyy"
                 type="date"
-                name="eventdate"
-                value={formData.eventdate}
+                name="date"
+                value={formData.date}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
@@ -185,15 +183,15 @@ function CreateEvent() {
               <label class=" dark:text-gray-200">Event time</label>
               <input
                 type="time"
-                name="eventtime"
-                value={formData.eventtime}
+                name="time"
+                value={formData.time}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 // value="00:00"
                 required
               />
             </div>
-            {/* for ticketPrice */}
+            {/* for ticketprice */}
             <div>
               <label class=" dark:text-gray-200">Ticket Price</label>
 
@@ -201,20 +199,20 @@ function CreateEvent() {
                 type="number"
                 min={100}
                 max={1000}
-                name="ticketPrice"
-                value={formData.ticketPrice}
+                name="ticketprice"
+                value={formData.ticketprice}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
-            {/* for ticketPrice */}
+            {/* for ticketprice */}
             <div>
               <label class=" dark:text-gray-200">Total Number of Seats</label>
 
               <input
                 type="number"
-                name="totalcapacity"
-                value={formData.totalcapacity}
+                name="ticketsize"
+                value={formData.ticketsize}
                 onChange={handleChange}
                 class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
