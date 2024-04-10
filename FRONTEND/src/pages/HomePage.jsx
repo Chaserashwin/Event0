@@ -24,13 +24,15 @@ const Developers = lazy(() => import("../pages/HomePage_Partials/Developers"));
 const [cat1, cat2, cat3, mic, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
+  
   //using usercontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
   //   console.log(logindata.validUser);
   const navigate = useNavigate();
 
-  //function to authenticate user manually
+
+  // function to authenticate user manually
   const Validate = async () => {
     let token = localStorage.getItem("token");
     const res = await axios.get("/myprofile", {
@@ -40,10 +42,11 @@ function HomePage() {
       },
     });
     const data = res;
-    console.log(data);
+    // console.log(data);
     if (data.status == 200 || data) {
-      console.log("user Verified");
+      // console.log("user Verified");
       setLogindata(data.data);
+      // window.location.reload()
       navigate("/");
     } else {
       navigate("/");

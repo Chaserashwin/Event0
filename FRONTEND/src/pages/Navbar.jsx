@@ -9,8 +9,10 @@ import Login from "./Login";
 import Signup from "./Signup";
 import { loginContext } from "../Context/UserContext";
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 const Navbar = () => {
+  const navigate=useNavigate();
   //to use usecontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
@@ -115,9 +117,9 @@ const Navbar = () => {
           <li className="mx-1">
             <BiSolidToggleRight className="h-8 w-8 cursor-pointer" />
           </li>*/}
-        </ul>
-        {/* for login and signup*/}
+        </ul>  
 
+        {/* for login and signup*/}
         {/*for diplaying user data if loged in*/}
         {logindata.validUser ? (
           <div className="flex ">

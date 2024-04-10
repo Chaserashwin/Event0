@@ -15,6 +15,7 @@ const { log } = require("util");
 module.exports.addEvent = (req, res) => {
   var newEvent = req.body;
   console.log(req.file);
+
   newEvent.src = req.file ? req.file.originalname : "";
   var EventData = new addEvent(newEvent);
   EventData.save()
@@ -98,18 +99,19 @@ module.exports.Register = async (req, res) => {
 module.exports.loginUser = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) return res.status(404).json(err);
-    if (user) {
-      const token = jwt.sign(
-        { _id: user.id, username: user.name },
-        "tokenSecret!",
-        { expiresIn: "1h" }
-      );
-      res.cookie("token", token, {
-        expires: new Date(Date.now() + 9000000),
-        httpOnly: true,
-      });
-      return res.status(200).json({ status: 200, token: token });
-    }
+    if (user)
+      {
+        const token = jwt.sign(
+          { _id: user.id, username: user.name },
+          "tokenSecret!",
+          { expiresIn: "1h" }
+        );
+        res.cookie("token", token, {
+          expires: new Date(Date.now() + 9000000),
+          httpOnly: true,
+        });
+        return res.status(200).json({ status: 200, token: token });
+      }
     if (info) return res.status(400).json({ info });
   })(req, res, next);
 };

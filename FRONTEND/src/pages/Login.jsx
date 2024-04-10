@@ -33,6 +33,7 @@ const Login = () => {
       } else {
         if(data.status==200){
           localStorage.setItem("token", data.token)
+          window.location.reload()
           navigate("/");
           setData({})
         toast.success("Login Successful")

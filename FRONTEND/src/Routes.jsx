@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useContext } from "react";
 import { useRoutes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+
 // import CreateEvent from "./pages/CreateEvent";
 // import FindEvent from "./pages/FindEvent";
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -44,6 +45,7 @@ const ProjectRoutes = () => {
           <NotFound />
           ),
         </Suspense>
+
       ),
     },
   ]);
