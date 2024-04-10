@@ -1,8 +1,4 @@
 import React, { Suspense, lazy, useState } from "react";
-import { useContext, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { loginContext } from "../Context/UserContext";
 import LandingPageDevelopers from "../utils/homepage_second_content";
 
 const First = lazy(() => import("../pages/HomePage_Partials/First"));
@@ -24,7 +20,7 @@ const Developers = lazy(() => import("../pages/HomePage_Partials/Developers"));
 const [cat1, cat2, cat3, mic, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
-  
+
   //using usercontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
