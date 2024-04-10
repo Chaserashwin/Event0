@@ -12,6 +12,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
 const Navbar = () => {
+  const navigate=useNavigate();
   //to use usecontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
