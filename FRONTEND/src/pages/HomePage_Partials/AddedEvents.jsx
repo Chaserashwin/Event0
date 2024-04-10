@@ -27,7 +27,7 @@ function EventCollection() {
     <>
       <div className="w-full h-auto flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto md:mb-8 mt-20 px-4 sm:px-6">
         {/* heading of component */}
-        <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
+        <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-300">
           <p
             className="bg-gradient-to-r 
          from-pink-500 to-yellow-500 hover:from-yellow-500 hover:to-pink-500 font-bold text-3xl md:text-4xl text-center "
@@ -37,7 +37,7 @@ function EventCollection() {
           <div className="w-36 h-1 border-b-4 border-yellow-400 rounded-2xl md:mt-4 mt-2 mb-12"></div>
         </div>
         {/* events cllection container starts */}
-        <div className="mb-2 px-4 sm:px-0 md:mb-6 mx-3 lg:mx-16">
+        <div className="mb-2 px-4 sm:px-0 md:mb-6 sm:mx-3 lg:mx-16">
           {/* heading of container */}
           {/* <div className="flex items-baseline justify-between border ">
             <h2 className="flex flex-wrap items-baseline gap-x-1 gap-y-2 font-semibold sm:gap-x-[1.5rem] xl:text-[1.75rem] xl:leading-9">

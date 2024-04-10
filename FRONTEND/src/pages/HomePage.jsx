@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { loginContext } from "../Context/UserContext";
 import LandingPageDevelopers from "../utils/homepage_second_content";
 
+// import OurCategories from "../pages/HomePage_Partials/OurCategories";
+// import EventCollection from "../pages/HomePage_Partials/EventCollection";
+// import AddedEvents from "../pages/HomePage_Partials/AddedEvents";
+// import Developers from "../pages/HomePage_Partials/Developers";
+
 const First = lazy(() => import("../pages/HomePage_Partials/First"));
 const OurCategories = lazy(() =>
   import("../pages/HomePage_Partials/OurCategories")
@@ -24,13 +29,11 @@ const Developers = lazy(() => import("../pages/HomePage_Partials/Developers"));
 const [cat1, cat2, cat3, mic, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
-  
   //using usercontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
   //   console.log(logindata.validUser);
   const navigate = useNavigate();
-
 
   // function to authenticate user manually
   const Validate = async () => {

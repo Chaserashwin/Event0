@@ -33,9 +33,9 @@ const Images = [
     src: "/images/dev2.png",
     title: "Samily Saini",
     role: "Backend Dev",
-    linkedinUrl: "https://www.linkedin.com/in/devanshuyadav16/",
+    linkedinUrl: "https://www.linkedin.com/in/samily-saini-274a91253",
     githubUrl: "https://github.com/SamilySaini",
-    // websiteUrl: "https://devanshuyadav.vercel.app/",
+    // websiteUrl: ""
   },
 ];
 

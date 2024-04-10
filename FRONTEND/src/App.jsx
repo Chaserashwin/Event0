@@ -42,7 +42,7 @@ function App() {
 
   return (
     // <div className={`"relative" ${darkMode && "dark"} `}>
-    <div className={`"relative" ${theme === "dark" && "dark"} `}>
+    <div className={`${theme === "dark" && "dark"} dark:bg-slate-950`}>
       <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
       <Router>
         <Header />

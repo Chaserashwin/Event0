@@ -4,9 +4,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-
 function CreateEvent() {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     src: "",
@@ -45,7 +44,7 @@ function CreateEvent() {
       .post("/addEvent", formData, config)
       .then((response) => {
         console.log("Event posted successfully:", response.data);
-        navigate("/")
+        navigate("/");
         toast.success("Event Created Successfully");
       })
       .catch((error) => {
@@ -54,12 +53,12 @@ function CreateEvent() {
   };
   return (
     <>
-      <div className="max-w-4xl p-6 mx-auto tex rounded-md shadow-md dark:bg-gray-950 mt-[50px] sm:mt-0 w-full h-auto min-h-screen px-4 sm:px-6">
+      <div className="max-w-6xl p-6 mx-auto tex rounded-md shadow-md dark:bg-transparent mt-[50px] sm:mt-0 w-full h-auto min-h-screen px-4 sm:px-6">
         {/* heading of component */}
         <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
           <p
             className="bg-gradient-to-r 
-         from-pink-500 to-yellow-500 hover:from-yellow-500 hover:to-pink-500 font-bold text-3xl md:text-4xl text-center "
+         from-pink-500 to-yellow-500 hover:from-yellow-500 hover:to-pink-500 font-bold text-3xl md:text-4xl text-center  border-2 border-gray-300"
           >
             Create Events
           </p>
@@ -107,7 +106,7 @@ function CreateEvent() {
             <div>
               <label class="block  dark:text-gray-200">Event Banner</label>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                <div class="space-y-1 text-center">
+                <div class="space-y-1 text-center dark:text-gray-600">
                   <svg
                     class="mx-auto h-12 w-12 "
                     stroke="currentColor"
@@ -211,7 +210,9 @@ function CreateEvent() {
             </div>
             {/* for ticketprice */}
             <div>
-              <label className=" dark:text-gray-200">Total Number of Seats</label>
+              <label className=" dark:text-gray-200">
+                Total Number of Seats
+              </label>
 
               <input
                 type="number"
@@ -226,7 +227,8 @@ function CreateEvent() {
               <button
                 type="submit"
                 className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
-              >Save
+              >
+                Save
               </button>
             </div>
           </div>

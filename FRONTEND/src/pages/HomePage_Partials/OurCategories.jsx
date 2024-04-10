@@ -10,7 +10,7 @@ function OurCategories({ images: categories }) {
             key={categorie?.id}
             className="h-[100px] w-[100px] flex flex-col items-center text-center m-1"
           >
-            <NavLink className="nav-link" to={categorie?.title}>
+            <NavLink className="nav-link" to="findevent">
               <img
                 className="bg-orange-300 hover:bg-orange-100 flex rounded-full p-1 border-dotted border-2 border-black"
                 src={categorie?.src}

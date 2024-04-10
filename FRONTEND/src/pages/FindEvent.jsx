@@ -17,7 +17,7 @@ function FindEvent() {
 
   return (
     <div className=" dark:bg-slate-950">
-      <div className="w-full h-auto min-h-screen flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto mt-[50px] sm:mt-0 px-4 sm:px-6 justify-center">
+      <div className="w-full h-auto flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto mt-[50px] sm:mt-0 px-4 sm:px-6 justify-center">
         {/* heading of component */}
         <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
           <p
@@ -26,15 +26,15 @@ function FindEvent() {
           >
             Find Events
           </p>
-          <div className="w-36 h-1 border-b-4 border-yellow-400 rounded-2xl md:mt-4 mt-2 mb-12"></div>
+          <div className="w-36 h-1 border-b-4 border-yellow-400 rounded-2xl md:mt-4 mt-2 mb-4"></div>
         </div>
         {/* SearchBar */}
         <div className="text-center w-full">
           <form className="text-center">
             <input
-              className="border border-black my-3 mx-3 px-3 py-2 dark:bg-slate-600 dark:text-white rounded-lg"
+              className="border border-black my-3 mx-3 px-3 py-2 dark:bg-slate-600 dark:text-white rounded-lg text-center"
               type="search"
-              placeholder="search Event Name"
+              placeholder="Musical Night"
               name=""
               id=""
               onChange={(e) => setSearch(e.target.value)}

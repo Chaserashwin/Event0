@@ -7,7 +7,7 @@ function Card({ item }) {
   return (
     <div
       key={item?.id}
-      className="flex break-words bg-transparent bg-white bg-cover bg-clip-padding p-0 transition-shadow duration-300 px-4 pt-6 pb-5 sm:px-0 sm:pt-0 sm:flex-row sm:justify-start sm:rounded sm:w-[272px] border-gray-300 border-b-[1px]"
+      className="flex break-words bg-transparent bg-white dark:bg-slate-700 bg-cover bg-clip-padding p-0 px-2 pt-2 pb-5 sm:px-1 sm:pt-1 sm:flex-row sm:justify-start sm:rounded sm:w-[272px] border-gray-300 border-b-[1px]"
     >
       <a
         href=""
@@ -17,11 +17,11 @@ function Card({ item }) {
           {/* content of card */}
           <div className="grow space-y-2 pr-4 md:mt-3">
             {/* title container */}
-            <h3 className="text-lg font-semibold  line-clamp-4 group-hover:underline sm:text-xl sm:leading-6 overflow-wrap-anywhere">
+            <h3 className="text-lg font-semibold  line-clamp-4 group-hover:underline sm:text-xl sm:leading-6 overflow-wrap-anywhere dark:text-indigo-400">
               {item?.eventname}
             </h3>
             {/* Organizer container */}
-            <p className="text-sm font-medium text-gray-300 line-clamp-2">
+            <p className="text-sm font-medium text-gray-400 line-clamp-2">
               Hosted by: {item?.organiser}
             </p>
             {/* date container */}

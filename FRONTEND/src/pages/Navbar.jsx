@@ -1,18 +1,16 @@
 import React from "react";
 import { useState, useContext } from "react";
 import ShowModal from "../components/ShowModal";
-import { TfiAnnouncement } from "react-icons/tfi";
-import { BiSolidToggleRight } from "react-icons/bi";
 import Event0 from "/1.svg";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import { loginContext } from "../Context/UserContext";
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   //to use usecontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
@@ -117,7 +115,7 @@ const Navbar = () => {
           <li className="mx-1">
             <BiSolidToggleRight className="h-8 w-8 cursor-pointer" />
           </li>*/}
-        </ul>  
+        </ul>
 
         {/* for login and signup*/}
         {/*for diplaying user data if loged in*/}
