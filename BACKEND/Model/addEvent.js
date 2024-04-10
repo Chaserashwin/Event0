@@ -1,38 +1,39 @@
 const mongoose = require("mongoose");
 
-
 var addEventSchema = mongoose.Schema({
-  eventcategory: {
+  catname: {
     type: String,
   },
   eventname: {
     type: String,
   },
-  imageUpload: {
+  src: {
     type: String,
   },
   location: {
     type: String,
   },
-  ticketPrice: {
+  ticketprice: {
+    type: Number,
+  },
+  ticketsize: {
+    type: Number,
+  },
+  likes: {
     type: Number,
   },
   description: {
     type: String,
   },
-  likes: {
-    type: Number,
-  },
-  organizer: {
+  organiser: {
     type: String,
   },
-  eventdate: {
+  date: {
     type: String,
   },
-  eventtime: {
+  time: {
     type: String,
   },
 });
 
 module.exports = mongoose.model("AddEvent", addEventSchema);
-

@@ -2,12 +2,11 @@ const express = require("express");
 var upload = require("../uploadmodule");
 var cors = require("cors");
 
-
 var userRoutes = express.Router();
 var userCtrl = require("../Controller/UserController");
 var verifyjwt = require("../Config/jwtVerify");
 //to add events
-userRoutes.post("/addEvent", upload.single("imageUpload"), userCtrl.addEvent);
+userRoutes.post("/addEvent", upload.single("src"), userCtrl.addEvent);
 //for login signup
 userRoutes.post("/register", userCtrl.Register);
 userRoutes.post("/login", userCtrl.loginUser);
@@ -24,4 +23,3 @@ userRoutes.get("/login/success", userCtrl.loginSuccess);
 userRoutes.get("/logoutgoogle", userCtrl.logoutgoogle);
 
 module.exports = userRoutes;
-

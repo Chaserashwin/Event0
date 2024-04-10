@@ -11,12 +11,12 @@ var User = require("../Model/googleLogin");
 var registerUser = require("../Model/newUserModel");
 const { log } = require("util");
 
-
 //to add events
 module.exports.addEvent = (req, res) => {
   var newEvent = req.body;
   console.log(req.file);
-  newEvent.imageUpload = req.file ? req.file.originalname: "";
+
+  newEvent.src = req.file ? req.file.originalname : "";
   var EventData = new addEvent(newEvent);
   EventData.save()
     .then((data) => {
@@ -39,21 +39,21 @@ module.exports.display = async (req, res) => {
 };
 
 // for finding event
-module.exports.findEvent=(req, res) => {
-    const array=[];
-return addEvent.find({title:req.body.title})
-        .then((data)=>{
-            array.push(data)
-            res.json({data});
-        })
-        .catch((err)=>{
-            res.status(404).json({
-                success:false,
-                error:err
-            })
-        })
-}
-
+module.exports.findEvent = (req, res) => {
+  const array = [];
+  return addEvent
+    .find({ title: req.body.title })
+    .then((data) => {
+      array.push(data);
+      res.json({ data });
+    })
+    .catch((err) => {
+      res.status(404).json({
+        success: false,
+        error: err,
+      });
+    });
+};
 
 //for signup
 module.exports.Register = async (req, res) => {

@@ -63,7 +63,6 @@ useEffect(() => {
   //for logout from google
   const logout = () => {
     window.open("http://localhost:2000/logoutgoogle");
-
   };
   //for logout manually
   const clickHandler = async () => {
@@ -162,37 +161,59 @@ useEffect(() => {
             <BiSolidToggleRight className="h-8 w-8 cursor-pointer" />
           </li>*/}
         </ul>  
-        {/* for login and signup*/}
 
+        {/* for login and signup*/}
         {/*for diplaying user data if loged in*/}
         {logindata.validUser ? (
-          <ul className="flex">
-            <li className="">
-            <NavLink to="/createevent"><span className="font-blue">CreateEvent</span></NavLink>
-              
-          </li>
-            <li className="mx-1">
-              {logindata.validUser.name[0].toUpperCase()}
-            </li>
-            <li>
-              <button onClick={clickHandler}>Logout</button>
-            </li>
-          </ul>
+          <div className="flex ">
+            <ul className="md:flex  font-semibold items-center gap-2">
+              {/* createevent button */}
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <NavLink to="/createevent">
+                  <button>CreateEvent</button>
+                </NavLink>
+              </div>
+              {/* logout button */}
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <li className="hidden md:block px-2 py-2  bg-[#00798a] dark:bg-indigo-800 text-white rounded font-bold cursor-pointer">
+                  <button onClick={clickHandler}>Logout</button>
+                </li>
+              </div>
+              {/* profile icon */}
+              <div className="block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <li className="mx-1">
+                  {logindata.validUser.name[0].toUpperCase()}
+                </li>
+              </div>
+            </ul>
+            {/* <ul className="md:flex block font-semibold items-center gap-2 rounded-full border-2 border-black">
+              <div className="block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <li className="mx-1">
+                  {logindata.validUser.name[0].toUpperCase()}
+                </li>
+              </div>
+            </ul> */}
+          </div>
         ) : logingoogle ? (
-          <ul className="flex">
-            <li className="">
-            <NavLink to="/createevent"><span className="font-blue">CreateEvent</span></NavLink>
-              
-            
-          </li>
-            <li className="mx-1">
-              {/* {userdata.displayName[0].toUpperCase()} */}
-              <img src={logingoogle.image} className="w-10 rounded"></img>
-            </li>
-            <li>
-              <button onClick={logout}>Logout</button>
-            </li>
-          </ul>
+          <div>
+            <ul className="md:flex hidden font-semibold items-center gap-2">
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <NavLink to="/createevent">
+                  <button>CreateEvent</button>
+                </NavLink>
+              </div>
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <li className="mx-1">
+                  <img src={logingoogle.image} className="w-10 rounded"></img>
+                </li>
+              </div>
+              <div className="hidden md:block px-2 py-2  dark:text-white rounded font-bold cursor-pointer">
+                <li className="hidden md:block px-2 py-2  bg-[#00798a] dark:bg-indigo-800 text-white rounded font-bold cursor-pointer">
+                  <button onClick={clickHandler}>Logout</button>
+                </li>
+              </div>
+            </ul>
+          </div>
         ) : (
           <div>
             <ul className="md:flex hidden font-semibold items-center gap-2">

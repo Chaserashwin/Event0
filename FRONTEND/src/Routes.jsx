@@ -1,11 +1,12 @@
 import React, { Suspense, lazy, useContext } from "react";
 import { useRoutes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import CreateEvent from "./pages/CreateEvent"
 
+// import CreateEvent from "./pages/CreateEvent";
+// import FindEvent from "./pages/FindEvent";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FindEvent = lazy(() => import("./pages/FindEvent"));
-// const CreateEvent = lazy(() => import("./pages/CreateEvent"));
+const CreateEvent = lazy(() => import("./pages/CreateEvent"));
 import { loginContext } from "./Context/UserContext";
 
 const ProjectRoutes = () => {
@@ -35,15 +36,16 @@ const ProjectRoutes = () => {
     {
       path: "createevent",
       element: (
-        // <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div>loading...</div>}>
           logindata.validUser ? (
-            <CreateEvent />
+          <CreateEvent />
           ) : logingoogle ? (
-            <CreateEvent />
+          <CreateEvent />
           ) : (
-            <NotFound />
-          )
-        // </Suspense>
+          <NotFound />
+          ),
+        </Suspense>
+
       ),
     },
   ]);
