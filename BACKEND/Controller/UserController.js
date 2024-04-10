@@ -16,7 +16,7 @@ const { log } = require("util");
 module.exports.addEvent = (req, res) => {
   var newEvent = req.body;
   console.log(req.file);
-  newEvent.imageUpload = req.file ? req.file.path : "";
+  newEvent.imageUpload = req.file ? req.file.originalname: "";
   var EventData = new addEvent(newEvent);
   EventData.save()
     .then((data) => {
@@ -100,16 +100,39 @@ module.exports.loginUser = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) return res.status(404).json(err);
     if (user)
-      return res.status(200).json({
-        token: jwt.sign({ _id: user.id, username: user.name }, "tokenSecret!", {
-          expiresIn: "300s",
-        }),
-      });
+      {
+        const token = jwt.sign(
+          { _id: user.id, username: user.name },
+          "tokenSecret!",
+          { expiresIn: "1h" }
+        );
+        res.cookie("token", token, {
+          expires: new Date(Date.now() + 9000000),
+          httpOnly: true,
+        });
+        return res.status(200).json({ status: 200, token: token });
+      }
     if (info) return res.status(400).json({ info });
   })(req, res, next);
 };
 module.exports.profile = (req, res) => {
-  res.status(200).json({ msg: "Hii There" });
+  registerUser
+    .findOne({ _id: req.userid })
+    .then((validUser) => {
+      return res.status(200).json({ status: 200, validUser });
+    })
+    .catch((error) => {
+      return res.status(404).json({ status: 404, error });
+    });
+};
+
+module.exports.logout = (req, res) => {
+  try {
+    res.clearCookie("token", { path: "/" });
+    return res.status(200).json({ status: 200 });
+  } catch (error) {
+    return res.status(400).json({ status: 400, error });
+  }
 };
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
@@ -155,12 +178,19 @@ module.exports.googleCallback = passport.authenticate("google", {
   failureRedirect: "http://localhost:5173/login",
 });
 
-module.exports.loginSuccess = async (req, re) => {
+module.exports.loginSuccess = async (req, res) => {
   if (req.user) {
-    req.status(200).json({ message: "User Login successful", user: req.user });
+    res.status(200).json({ message: "User Login successful", user: req.user });
   } else {
-    req.status(400).json({ message: "Not Authorized" });
+    res.status(400).json({ message: "Not Authorized" });
   }
+};
+
+module.exports.logoutgoogle = (req, res, next) => {
+  req.logout(function (error) {
+    if (error) return next(error);
+    res.redirect("http://localhost:5173");
+  });
 };
 
 //to store info in session

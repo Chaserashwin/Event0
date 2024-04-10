@@ -31,9 +31,14 @@ const Login = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        setData({});
-        toast.success("Login Successful");
-        navigate("/");
+        if(data.status==200){
+          localStorage.setItem("token", data.token)
+          navigate("/");
+          setData({})
+        toast.success("Login Successful")
+        
+  
+        }
       }
     } catch (error) {
       toast.error(error.response.data.info.message)

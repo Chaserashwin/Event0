@@ -3,7 +3,10 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+
 function CreateEvent() {
+   
+
   const [formData, setFormData] = useState({
     eventcategory: "",
     eventname: "",
