@@ -12,6 +12,10 @@ const OurCategories = lazy(() =>
 const EventCollection = lazy(() =>
   import("../pages/HomePage_Partials/EventCollection")
 );
+const AddedEvents = lazy(() =>
+  import("../pages/HomePage_Partials/AddedEvents")
+);
+
 const FeaturesZigZag = lazy(() =>
   import("../pages/HomePage_Partials/FeaturesZigZag")
 );
@@ -20,12 +24,13 @@ const Developers = lazy(() => import("../pages/HomePage_Partials/Developers"));
 const [cat1, cat2, cat3, mic, dev1, dev2] = LandingPageDevelopers;
 
 function HomePage() {
- 
+  
   //using usercontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
   //   console.log(logindata.validUser);
   const navigate = useNavigate();
+
 
   // function to authenticate user manually
   const Validate = async () => {
@@ -56,7 +61,7 @@ function HomePage() {
   const getUser = async () => {
     try {
       const res = await axios.get("/login/success", { withCredentials: true });
-      // console.log(res.data);
+      console.log(res.data);
       setLogingoogle(res.data.user);
     } catch (error) {
       console.log(error);
@@ -79,6 +84,9 @@ function HomePage() {
             </Suspense>
             <Suspense fallback="loading...">
               <EventCollection />
+            </Suspense>
+            <Suspense fallback="loading...">
+              <AddedEvents />
             </Suspense>
             {/* <Suspense fallback="loading...">
               <FeaturesZigZag images={[mic]} />
