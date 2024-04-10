@@ -1,10 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
 // import { NavLink } from "react-router-dom";
 import ShowModal from "../../components/ShowModal";
 import Signup from "../Signup";
+import { loginContext } from "../../Context/UserContext";
 
 function First() {
+  //using usercontext
+  const { logindata, setLogindata, logingoogle, setLogingoogle } =
+    useContext(loginContext);
   const [showsignupModal, setShowsignupModal] = useState(false);
   const closesignupModal = () => setShowsignupModal(false);
   const signupModal = (
@@ -37,12 +41,14 @@ function First() {
               events that will make your life eventful...
             </p>
             <div className="mt-0">
+              {logindata.validUser?"":logingoogle?"":
               <button
                 onClick={() => setShowsignupModal(true)}
                 className="bg-gray-500 text-black hover:bg-black hover:text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
               >
                 Join Event0
               </button>
+              }
               {showsignupModal && signupModal}
             </div>
           </div>

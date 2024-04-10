@@ -9,8 +9,10 @@ import Login from "./Login";
 import Signup from "./Signup";
 import { loginContext } from "../Context/UserContext";
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 const Navbar = () => {
+  const navigate=useNavigate();
   //to use usecontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
@@ -18,6 +20,7 @@ const Navbar = () => {
   //for logout from google
   const logout = () => {
     window.open("http://localhost:2000/logoutgoogle");
+
   };
   //for logout manually
   const clickHandler = async () => {
@@ -122,7 +125,7 @@ const Navbar = () => {
         {logindata.validUser ? (
           <ul className="flex">
             <li className="">
-            <NavLink to="/createevent"><span className="text-blue">CreateEvent</span></NavLink>
+            <NavLink to="/createevent"><span className="font-blue">CreateEvent</span></NavLink>
               
           </li>
             <li className="mx-1">
@@ -135,7 +138,7 @@ const Navbar = () => {
         ) : logingoogle ? (
           <ul className="flex">
             <li className="">
-            <NavLink to="/createevent"><span className="text-blue">CreateEvent</span></NavLink>
+            <NavLink to="/createevent"><span className="font-blue">CreateEvent</span></NavLink>
               
             
           </li>

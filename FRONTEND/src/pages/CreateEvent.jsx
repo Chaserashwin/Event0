@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 function CreateEvent() {
-   
+  const navigate=useNavigate()
 
   const [formData, setFormData] = useState({
     eventcategory: "",
@@ -43,6 +44,7 @@ function CreateEvent() {
       .post("/addEvent", formData, config)
       .then((response) => {
         console.log("Event posted successfully:", response.data);
+        navigate("/")
         toast.success("Event Created Successfully");
       })
       .catch((error) => {
@@ -63,22 +65,22 @@ function CreateEvent() {
           <div className="w-36 h-1 border-b-4 border-yellow-400 rounded-2xl md:mt-4 mt-2 mb-12"></div>
         </div>
         <form onSubmit={handleSubmit}>
-          <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             {/* for Event Category */}
             <div>
-              <label class=" dark:text-gray-200">Category</label>
+              <label className=" dark:text-gray-200">Category</label>
 
               <input
                 type="text"
                 name="eventcategory"
                 value={formData.eventcategory}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for Event Title */}
             <div>
-              <label class=" dark:text-gray-200">Title</label>
+              <label className=" dark:text-gray-200">Title</label>
 
               <input
                 type="text"
@@ -144,31 +146,31 @@ function CreateEvent() {
             </div>
             {/* for Organized by */}
             <div>
-              <label class=" dark:text-gray-200">Organized By</label>
+              <label className=" dark:text-gray-200">Organized By</label>
 
               <input
                 type="text"
                 name="organizer"
                 value={formData.organizer}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for Location */}
             <div>
-              <label class=" dark:text-gray-200">Location</label>
+              <label className=" dark:text-gray-200">Location</label>
 
               <input
                 type="text"
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for date */}
             <div>
-              <label class=" dark:text-gray-200">Event Date</label>
+              <label className=" dark:text-gray-200">Event Date</label>
 
               <input
                 datepicker
@@ -177,25 +179,25 @@ function CreateEvent() {
                 name="eventdate"
                 value={formData.eventdate}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for time */}
             <div>
-              <label class=" dark:text-gray-200">Event time</label>
+              <label className=" dark:text-gray-200">Event time</label>
               <input
                 type="time"
                 name="eventtime"
                 value={formData.eventtime}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 // value="00:00"
                 required
               />
             </div>
             {/* for ticketPrice */}
             <div>
-              <label class=" dark:text-gray-200">Ticket Price</label>
+              <label className=" dark:text-gray-200">Ticket Price</label>
 
               <input
                 type="number"
@@ -204,28 +206,27 @@ function CreateEvent() {
                 name="ticketPrice"
                 value={formData.ticketPrice}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for ticketPrice */}
             <div>
-              <label class=" dark:text-gray-200">Total Number of Seats</label>
+              <label className=" dark:text-gray-200">Total Number of Seats</label>
 
               <input
                 type="number"
                 name="totalcapacity"
                 value={formData.totalcapacity}
                 onChange={handleChange}
-                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
             {/* for final submit button */}
-            <div class="flex justify-end mt-6">
+            <div className="flex justify-end mt-6">
               <button
                 type="submit"
-                class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
-              >
-                Save
+                className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
+              >Save
               </button>
             </div>
           </div>
