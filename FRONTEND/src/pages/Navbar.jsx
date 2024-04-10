@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext,useEffect } from "react";
 import ShowModal from "../components/ShowModal";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { BiSolidToggleRight } from "react-icons/bi";
@@ -12,10 +12,53 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 
 const Navbar = () => {
-  const navigate=useNavigate();
   //to use usecontext
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
     useContext(loginContext);
+     //using usercontext
+  // const { logindata, setLogindata, logingoogle, setLogingoogle } =
+  // useContext(loginContext);
+//   console.log(logindata.validUser);
+const navigate = useNavigate();
+
+// function to authenticate user manually
+const Validate = async () => {
+  let token = localStorage.getItem("token");
+  const res = await axios.get("/myprofile", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+  const data = res;
+  // console.log(data);
+  if (data.status == 200 || data) {
+    // console.log("user Verified");
+    setLogindata(data.data);
+    // window.location.reload()
+    // navigate("/");
+  } else {
+    navigate("/");
+  }
+};
+
+useEffect(() => {
+  Validate();
+}, []);
+
+//function to authenticate user with google
+const getUser = async () => {
+  try {
+    const res = await axios.get("/login/success", { withCredentials: true });
+    // console.log(res.data);
+    setLogingoogle(res.data.user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+useEffect(() => {
+  getUser();
+}, []);
 
   //for logout from google
   const logout = () => {
