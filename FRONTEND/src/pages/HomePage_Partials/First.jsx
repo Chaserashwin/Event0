@@ -1,5 +1,5 @@
 import React from "react";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 // import { NavLink } from "react-router-dom";
 import ShowModal from "../../components/ShowModal";
 import Signup from "../Signup";
@@ -25,7 +25,7 @@ function First() {
       <div className="w-full h-auto flex flex-col items-center sm:mt-[140px] mt-[120px] ">
         <div
           className="flex flex-col items-center sm:flex-row sm:mx-20 md:mx-10 lg:mx-16  mx-5 border-4 dark:border-gray-400 border-black rounded md:p-4 p-3 bg-gradient-to-r 
-         from-pink-500 to-yellow-500"
+         from-pink-500 to-yellow-500 min-h-[400px] h-[545px] sm:h-auto"
         >
           <div className=" flex w-full flex-col space-y-6 mb-0 md:mr-6 md:ml-6 lg:w-7/12 md:block md:p-4 p-2 items-center">
             <h1 className="sm:text-start text-center text-4xl sm:text-5xl font-extrabold dark:text-white">
@@ -41,14 +41,18 @@ function First() {
               events that will make your life eventful...
             </p>
             <div className="mt-0">
-              {logindata.validUser?"":logingoogle?"":
-              <button
-                onClick={() => setShowsignupModal(true)}
-                className="bg-gray-500 text-black hover:bg-black hover:text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
-              >
-                Join Event0
-              </button>
-              }
+              {logindata.validUser ? (
+                ""
+              ) : logingoogle ? (
+                ""
+              ) : (
+                <button
+                  onClick={() => setShowsignupModal(true)}
+                  className="bg-gray-500 text-black hover:bg-black hover:text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
+                >
+                  Join Event0
+                </button>
+              )}
               {showsignupModal && signupModal}
             </div>
           </div>

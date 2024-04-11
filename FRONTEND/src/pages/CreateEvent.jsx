@@ -53,9 +53,9 @@ function CreateEvent() {
   };
   return (
     <>
-      <div className="max-w-6xl p-6 mx-auto tex rounded-md shadow-md dark:bg-transparent mt-[50px] sm:mt-0 w-full h-auto min-h-screen px-4 sm:px-6">
+      <div className="max-w-6xl p-6 mx-auto tex rounded-md shadow-md dark:bg-transparent mt-[50px] sm:mt-0 w-full h-auto min-h-screen px-4 sm:px-6 pb-[2px] mb-10">
         {/* heading of component */}
-        <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800">
+        <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 border-t border-gray-800 ">
           <p
             className="bg-gradient-to-r 
          from-pink-500 to-yellow-500 hover:from-yellow-500 hover:to-pink-500 font-bold text-3xl md:text-4xl text-center  border-2 border-gray-300"
@@ -223,14 +223,14 @@ function CreateEvent() {
               />
             </div>
             {/* for final submit button */}
-            <div className="flex justify-end mt-6">
-              <button
-                type="submit"
-                className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
-              >
-                Save
-              </button>
-            </div>
+          </div>
+          <div className="flex justify-center mt-6">
+            <button
+              type="submit"
+              className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
+            >
+              Save
+            </button>
           </div>
         </form>
       </div>

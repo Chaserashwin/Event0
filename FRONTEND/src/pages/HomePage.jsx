@@ -1,5 +1,8 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useContext, useEffect } from "react";
 import LandingPageDevelopers from "../utils/homepage_second_content";
+import { loginContext } from "../Context/UserContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // import OurCategories from "../pages/HomePage_Partials/OurCategories";
 // import EventCollection from "../pages/HomePage_Partials/EventCollection";
@@ -13,8 +16,8 @@ const OurCategories = lazy(() =>
 const EventCollection = lazy(() =>
   import("../pages/HomePage_Partials/EventCollection")
 );
-const AddedEvents = lazy(() =>
-  import("../pages/HomePage_Partials/AddedEvents")
+const NewlyAddedEvents = lazy(() =>
+  import("../pages/HomePage_Partials/NewlyAddedEvents")
 );
 
 const FeaturesZigZag = lazy(() =>
@@ -85,7 +88,7 @@ function HomePage() {
               <EventCollection />
             </Suspense>
             <Suspense fallback="loading...">
-              <AddedEvents />
+              <NewlyAddedEvents />
             </Suspense>
             {/* <Suspense fallback="loading...">
               <FeaturesZigZag images={[mic]} />
