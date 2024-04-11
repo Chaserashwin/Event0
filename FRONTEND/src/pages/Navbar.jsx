@@ -66,7 +66,8 @@ const Navbar = () => {
 
   //for logout from google
   const logout = () => {
-    window.open("http://localhost:2000/logoutgoogle");
+    window.open("http://localhost:2000/logoutgoogle", "_self");
+    window.location.origin;
   };
   //for logout manually
   const clickHandler = async () => {
@@ -285,7 +286,7 @@ const Navbar = () => {
                     <p>Help & Support</p>
                     <span>></span>
                   </a>
-                  <a onClick={clickHandler} href="#" className="sub-menu-link">
+                  <a onClick={logout} href="#" className="sub-menu-link">
                     <GrLogout className="sub-menu-link-icon" />
                     <p>Logout</p>
                     <span>></span>

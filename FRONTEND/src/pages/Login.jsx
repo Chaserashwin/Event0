@@ -31,18 +31,16 @@ const Login = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        if(data.status==200){
-          localStorage.setItem("token", data.token)
-          window.location.reload()
+        if (data.status == 200) {
+          localStorage.setItem("token", data.token);
+          window.location.reload();
           navigate("/");
-          setData({})
-        toast.success("Login Successful")
-        
-  
+          setData({});
+          toast.success("Login Successful");
         }
       }
     } catch (error) {
-      toast.error(error.response.data.info.message)
+      toast.error(error.response.data.info.message);
       console.log(error);
     }
   };
@@ -63,20 +61,18 @@ const Login = () => {
     <>
       <div className="grid pt-9 pb-8 sm:pl-10 sm:pr-10 sm:block relative place-content-center max-h-screen bg-transparent rounded-lg ">
         <div className="flex flex-col items-center">
-          <form className="w-full" onSubmit={submitHandler}>
-            {/* Upper Container */}
-            <div className="flex flex-col mb-1 md:mb-8 items-center">
-              <img src={Event0} alt="Event0" height={100} width={100} cover />
-              <h1 className="ds-font-title-2 mb-2 font-semibold">Log in</h1>
-              <div className="flex space-x-1">
-                <span>Not a member yet?</span>
-                <button onClick={() => setShowsignupModal(true)}>
-                  Sign up
-                </button>
-                {showsignupModal && signupModal}
-              </div>
+          {/* Upper Container */}
+          <div className="flex flex-col mb-1 md:mb-8 items-center">
+            <img src={Event0} alt="Event0" height={100} width={100} cover />
+            <h1 className="ds-font-title-2 mb-2 font-semibold">Log in</h1>
+            <div className="flex space-x-1">
+              <span>Not a member yet?</span>
+              <button onClick={() => setShowsignupModal(true)}>Sign up</button>
+              {showsignupModal && signupModal}
             </div>
-            {/* lower Container */}
+          </div>
+          {/* lower Container */}
+          <form className="w-full" onSubmit={submitHandler}>
             <div className="flex flex-col-reverse items-center space-y-8 md:flex-col">
               {/* for email and password authentication */}
               <div className="w-full items-center text-center">
@@ -131,7 +127,6 @@ const Login = () => {
                 <a
                   href="http://localhost:2000/auth/google/callback"
                   className="w-full flex flex-row h-13 cursor-pointer items-center text-center rounded-lg border border-gray6 hover:no-underline justify-evenly font-semibold "
-
                 >
                   <img src={google} width={50} height={50} alt="" />
                   log in with Google
