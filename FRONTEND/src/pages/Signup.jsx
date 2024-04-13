@@ -40,8 +40,9 @@ function Signup() {
         toast.error(data.error);
       } else {
         setData({});
+        navigate("/");
+        window.location.reload();
         toast.success("Registration Successful");
-        navigate("/login");
       }
     } catch (error) {
       console.log(error);

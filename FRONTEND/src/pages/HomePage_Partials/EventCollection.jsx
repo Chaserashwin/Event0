@@ -15,7 +15,7 @@ function EventCollection() {
   return (
     <>
       <div className="w-full border-t border-gray-500 sm:mb-10 sm:mt-20 mt-10 mb-10 ">
-        <div className="w-full h-auto flex flex-wrap flex-col md:p-10 max-w-10xl mx-auto  px-4 sm:px-6">
+        <div className="w-full h-auto flex flex-wrap flex-col md:p-5 max-w-10xl mx-auto px-4 sm:px-6">
           {/* heading of component */}
           <div className="w-full h-auto flex flex-wrap flex-col items-center pt-12 md:pt-20 ">
             <p
@@ -44,8 +44,8 @@ function EventCollection() {
               </NavLink>
             </div>
             {/* event collection starts */}
-            <div className="mb-2 px-0 lg:mb-10 w-full  p-2">
-              <div className="flex flex-col flex-wrap gap-2  sm:flex-row sm:gap-16  sm:justify-center">
+            <div className="mb-2 px-0 lg:mb-10 w-full p-2">
+              <div className="flex flex-col flex-wrap gap-2 sm:flex-row sm:gap-5  sm:justify-center">
                 {/* event card starts here */}
                 {Eventsinfo?.map((Eventinfo) => (
                   <Card item={Eventinfo} />
