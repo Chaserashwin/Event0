@@ -20,8 +20,9 @@ app.use(
 );
 //for connecting backend with front end
 var corsOptions = {
+  origin: "http://",
+  methods:["POST","GET"],
   credentials: true,
-  origin: "http://localhost:5173",
   optionsSuccessStatus: 200,
 };
 
