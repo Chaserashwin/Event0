@@ -7,7 +7,7 @@ import Header from "./pages/Header";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 
-axios.defaults.baseURL = "http://localhost:2000/";
+axios.defaults.baseURL = "https://event0-backend.vercel.app/";
 axios.defaults.withCredentials = true;
 
 function App() {
