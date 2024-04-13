@@ -4,7 +4,7 @@ import Card from "./Card";
 function EventCard({ dummy, search }) {
   return (
     <div className="mb-2 px-0 lg:mb-10 w-full p-2">
-      <div className="flex flex-col flex-wrap gap-2  sm:flex-row sm:gap-16  sm:justify-center">
+      <div className="flex flex-col flex-wrap gap-2  sm:flex-row sm:gap-5  sm:justify-center">
         {/* event card starts here */}
         {dummy
           .filter((item) => {
