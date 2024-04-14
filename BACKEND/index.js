@@ -20,9 +20,8 @@ app.use(
 );
 //for connecting backend with front end
 var corsOptions = {
-  origin: "https://event0-frontend.vercel.app",
-  methods:["POST","GET"],
   credentials: true,
+  origin: "http://localhost:5173",
   optionsSuccessStatus: 200,
 };
 
