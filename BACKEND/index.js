@@ -6,8 +6,7 @@ var session = require("express-session");
 var dotenv = require("dotenv").config();
 var routes = require("./Routes/UserRoutes");
 var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-var cookieParser=require("cookie-parser");
-
+var cookieParser = require("cookie-parser");
 
 var app = express();
 //creating session for google login
@@ -37,7 +36,6 @@ app.use(cookieParser());
 app.use("/", routes);
 //for displaying image in front end
 app.use("/Uploads", express.static("Uploads"));
-
 
 app.listen(2000, (err) => {
   if (err) console.log(err);
