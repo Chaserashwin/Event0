@@ -6,14 +6,14 @@ function Buttons({ menuItems, filterItems, setItems }) {
     <div className="flex justify-center mb-2">
       {menuItems.map((val) => (
         <button
-          className=" text-white bg-black p-1 px-2 mx-5 rounded-lg"
+          className=" text-white bg-black border-2 dark:border-white p-1 px-2 mx-5 rounded-lg"
           onClick={() => filterItems(val)}
         >
           {val}
         </button>
       ))}
       <button
-        className="text-white bg-black p-1 px-2 mx-5 rounded-lg"
+        className="text-white bg-black border-2 dark:border-white p-1 px-2 mx-5 rounded-lg"
         onClick={() => setItems(dummy)}
       >
         All

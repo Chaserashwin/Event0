@@ -13,7 +13,6 @@ module.exports.verifyToken = (req, res, next) => {
           else {
             registerUser.findOne({ _id: decode._id }).then((user, token) => {
               (req.token = token), (req.user = user), (req.userid = user._id);
-
               next();
             });
           }

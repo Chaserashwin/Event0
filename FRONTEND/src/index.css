@@ -29,7 +29,7 @@
 } */
 
 .sub-menu {
-  @apply bg-white dark:bg-slate-700 p-[20px] m-[10px] border-2 border-gray-400;
+  @apply bg-white dark:bg-slate-900 p-[20px] m-[10px] border-2 border-gray-400 rounded-[20px];
 }
 
 .user-info {
@@ -79,6 +79,7 @@
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
+  border-radius: 25px;
 }
 
 .sub-menu-wrap.open-menu {
