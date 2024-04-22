@@ -271,11 +271,11 @@ const Navbar = () => {
                     <p>Find Event</p>
                     <span>></span>
                   </NavLink>
-                  <a href="#" className="sub-menu-link">
+                  <NavLink to="myprofile" className="sub-menu-link">
                     <CgProfile className="sub-menu-link-icon" />
                     <p>Edit Profile</p>
                     <span>></span>
-                  </a>
+                  </NavLink>
                   <a href="#" className="sub-menu-link">
                     <MdOutlineSettingsSuggest className="sub-menu-link-icon" />
                     <p>Settings & Privacy</p>

@@ -6,6 +6,7 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const FindEvent = lazy(() => import("./pages/FindEvent"));
 const CreateEvent = lazy(() => import("./pages/CreateEvent"));
 import { loginContext } from "./Context/UserContext";
+import MyProfile from "./pages/MyProfile";
 
 const ProjectRoutes = () => {
   const { logindata, setLogindata, logingoogle, setLogingoogle } =
@@ -39,6 +40,20 @@ const ProjectRoutes = () => {
             <CreateEvent />
           ) : logingoogle ? (
             <CreateEvent />
+          ) : (
+            <NotFound />
+          )}
+        </Suspense>
+      ),
+    },
+    {
+      path: "myprofile",
+      element: (
+        <Suspense fallback={<div>loading...</div>}>
+          {logindata.validUser ? (
+            <MyProfile />
+          ) : logingoogle ? (
+            <MyProfile />
           ) : (
             <NotFound />
           )}
