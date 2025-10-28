@@ -48,7 +48,7 @@ function First() {
               ) : (
                 <button
                   onClick={() => setShowsignupModal(true)}
-                  className="bg-gray-500 text-black hover:bg-black hover:text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black dark:border-white p-2 font-semibold transition-0.5"
+                  className="hover:bg-gray-500 hover:text-black bg-black text-teal-50 md:text-xl inline-block hover:no-underline rounded-xl border-solid border-2 md:border-4 border-black p-2 font-semibold transition-0.5"
                 >
                   Join Event0
                 </button>

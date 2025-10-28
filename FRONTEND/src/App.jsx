@@ -13,7 +13,17 @@ axios.defaults.withCredentials = true;
 function App() {
   // const [darkMode, setDarkMode] = useState(false);
   // const [theme, setTheme] = useState("light");
+
   const [theme, setTheme] = useState(null);
+
+  // for manually changing mode
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   // for browser windows mode default
   useEffect(() => {
@@ -23,14 +33,6 @@ function App() {
       setTheme("light");
     }
   }, []);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
 
   // const toggleDarkMode = () => {
   //   setDarkMode(!darkMode);
